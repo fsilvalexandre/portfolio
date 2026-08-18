@@ -1,0 +1,230 @@
+/* Reset básico — remove espaçamentos padrão do browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+}   
+
+/* Cabeçalho / menu de navegação */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: rgba(13, 13, 13, 0.3);   /* preto a 30% de opacidade */
+  backdrop-filter: blur(8px);                 /* desfoca o que está atrás */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+/* Secção principal (hero) */
+.hero-text {
+  position: absolute;
+  top: 120px;           /* distância a partir do topo, abaixo do navbar */
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 200;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.logo img {
+  height: 80px;      /* ajusta este valor conforme o tamanho do teu logótipo */
+  width: auto;        /* mantém a proporção original, sem distorcer */
+  display: block;
+}
+
+/* Conteúdo geral das páginas internas */
+.page-content {
+  padding: 140px 40px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+  margin: 20px auto 0;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 60px 0 30px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 1px;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+  margin: 16px auto 0;
+}
+
+/* Secção 1: Sobre a banda */
+.about-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  text-align: justify;
+}
+
+.about-img {
+  width: 45%;
+  border-radius: 4px;
+}
+
+.about-text {
+  width: 55%;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Secção 2: Membros */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.member-card {
+  text-align: justify;
+}
+
+.member-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.member-card h3 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.member-card p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Secção 3: Prémios */
+.awards-list {
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.awards-list li {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+}
+
+.award-year {
+  opacity: 0.6;
+  min-width: 50px;
+}
