@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/estilo.css">
 </head>
 
@@ -23,16 +24,21 @@
 <li><a href="index.html">Página Inicial</a></li>
 <li><a href="sobre.html">Sobre Nós</a></li>
 <li><a href="repertorio.html">Repertório</a></li>
-<li><a href="espetaculos.html">Espetáculos</a></li>
 <li><a href="galeria.html">Galeria</a></li>
 <li><a href="agenda.html">Agenda</a></li>
 <li><a href="contactos.html">Contactos</a></li>
 </ul>
 
 <div class="socials">
-<a href="#" target="_blank">Facebook</a>
-<a href="#" target="_blank">Instagram</a>
-<a href="#" target="_blank">YouTube</a>
+<a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
+<i class="fab fa-youtube"></i>
+</a>
 </div>
 </nav>
 </header>
@@ -43,38 +49,33 @@
 <h1 class="page-title">Agenda</h1>
 <p class="page-subtitle">Próximos Eventos</p>
 
+<div class="events-tabs">
+<input type="radio" id="tab-proximos" name="event-tabs" checked>
+<input type="radio" id="tab-passados" name="event-tabs">
+
+<div class="tabs-header">
+<label for="tab-proximos" class="tab-label">Próximos</label>
+<label for="tab-passados" class="tab-label">Passados</label>
+</div>
+
+<div id="proximos" class="tab-content">
 <div class="timeline">
-
-<div class="timeline-item">
-<div class="timeline-content">
-<div class="event-date-badge">
-<span class="day">04</span>
-<span class="month">Set</span>
-</div>
-<h3 class="event-title">Intermitências</h3>
-<p class="event-time">21:30</p>
-<p class="event-location">Auditório Municipal Sá de Miranda, Viana do Castelo</p>
-<p class="event-description">Obras de: Carlos Guedes, Julianna Hodkinson, Cathy van Eck, Simon Løffler & David Bird</p>
 </div>
 </div>
 
-<div class="timeline-item">
-<div class="timeline-content">
-<div class="event-date-badge">
-<span class="day">28</span>
-<span class="month">Out</span>
-</div>
-<h3 class="event-title">Festival de Música Contemporânea</h3>
-<p class="event-time">19:30</p>
-<p class="event-location">Centro Cultural, Porto</p>
-<p class="event-description">Participação no Festival Europeu de Música Contemporânea com um programa seleto de obras para percussão.</p>
+<div id="passados" class="tab-content">
+<div class="cards-grid">
 </div>
 </div>
 
 </div>
+
 </div>
 
 </main>
+
+<script src="js/shared-events.js"></script>
+<script src="js/agenda.js"></script>
 
 </body>
 </html>
