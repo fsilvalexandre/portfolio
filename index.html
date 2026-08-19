@@ -66,14 +66,17 @@
 <script src="js/shared-events.js"></script>
 <script>
 getNextConcert().then(concert => {
+    const floatingConcert = document.getElementById('floating-concert');
+    
     if (concert) {
         document.getElementById('fc-day').textContent = concert.day;
         document.getElementById('fc-month').textContent = concert.month;
         document.getElementById('fc-title').textContent = concert.title;
         document.getElementById('fc-time').textContent = concert.time;
         document.getElementById('fc-location').textContent = concert.location;
+        floatingConcert.style.display = 'block';  // ← Mostra se há evento
     } else {
-        document.getElementById('floating-concert').style.display = 'none';
+        floatingConcert.style.display = 'none';  // ← Esconde se não há
     }
 });
 </script>
