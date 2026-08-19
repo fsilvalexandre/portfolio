@@ -763,14 +763,19 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    max-width: 600px;
+}
+
+.contact-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Email */
+/* Email - Esquerda */
 .contact-email {
-    text-align: center;
-    margin-top: -40px;
+    text-align: left;
 }
 
 .contact-email p {
@@ -790,14 +795,14 @@ footer::before {
     border-bottom-color: rgba(245, 245, 245, 0.6);
 }
 
-/* Redes Sociais */
+/* Redes Sociais - Direita */
 .socials-section {
-    text-align: center;
+    text-align: right;
 }
 
 .socials-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 50px;
     margin-top: 30px;
 }
@@ -825,9 +830,11 @@ footer::before {
     color: #f5f5f5;
 }
 
-/* Press Photos */
+/* Press Photos - Abaixo (full width) */
 .press-photos-section {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .press-description {
@@ -862,11 +869,21 @@ footer::before {
 }
 
 @media (max-width: 768px) {
-    .contact-section {
+    .contact-top {
+        grid-template-columns: 1fr;
         gap: 60px;
     }
 
+    .contact-email {
+        text-align: center;
+    }
+
+    .socials-section {
+        text-align: center;
+    }
+
     .socials-links {
+        justify-content: center;
         flex-direction: column;
         gap: 30px;
     }
