@@ -909,3 +909,8 @@ input[type="radio"][name="event-tabs"] {
         font-size: 1.5rem;
     }
 }
+
+/* Remove as bolas dos events cards (passados) */
+.event-card::before {
+    display: none;
+}
