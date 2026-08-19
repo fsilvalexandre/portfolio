@@ -3,36 +3,9 @@
         "day": "04",
         "month": "Set",
         "title": "Intermitências",
-        "time": "21:#90",
+        "time": "21:30",
         "location": "Auditório Municipal Sá de Miranda, Viana do Castelo",
-        "description": "Apresentação de obras contemporâneas do nosso repertório, incluindo estreias e encomendas do RePercussion Trio.",
+        "description": "Obras de: Works by: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial
         "date": "2026-09-04"
     },
-    {
-        "day": "15",
-        "month": "Out",
-        "title": "Festival de Música Contemporânea",
-        "time": "19:30",
-        "location": "Centro Cultural, Porto",
-        "description": "Participação no Festival Europeu de Música Contemporânea com um programa seleto de obras para percussão.",
-        "date": "2026-10-15"
-    },
-    {
-        "day": "10",
-        "month": "Ago",
-        "title": "Apresentação em Barcelona",
-        "time": "21:00",
-        "location": "Sala Verdi, Barcelona",
-        "description": "Concerto no festival de música experimental, com obras de compositores catalães e internacionais.",
-        "date": "2026-08-10"
-    },
-    {
-        "day": "25",
-        "month": "Jul",
-        "title": "Workshop Percussão Contemporânea",
-        "time": "15:00",
-        "location": "Conservatório Nacional, Lisboa",
-        "description": "Masterclass com apresentação de técnicas estendidas e composição para percussão.",
-        "date": "2024-07-25"
-    }
 ]
