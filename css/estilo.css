@@ -1,911 +1,759 @@
-  /* Reset básico — remove espaçamentos padrão do browser */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* Estilo geral do corpo da página */
-  body {
-    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: #f5f5f5;
-  }   
-
-  /* Cabeçalho / menu de navegação */
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background-color: rgba(13, 13, 13, 0.3);   /* preto a 30% de opacidade */
-    backdrop-filter: blur(8px);                 /* desfoca o que está atrás */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-  }
-
-  .logo {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-  }
-
-  .nav-links a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: opacity 0.3s;
-  }
-
-  .nav-links a:hover {
-    opacity: 0.6;
-  }
-
-  .socials {
-    display: flex;
-    gap: 25px;
-  }
-
-  .socials a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-
-  /* Secção principal (hero) */
-  .hero-text {
-    position: absolute;
-    top: 120px;           /* distância a partir do topo, abaixo do navbar */
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-    font-weight: 200;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .hero-text p {
-    font-size: 0.85rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.7;
-  }
-
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-  }
-
-  .logo img {
-    height: 80px;      /* ajusta este valor conforme o tamanho do teu logótipo */
-    width: auto;        /* mantém a proporção original, sem distorcer */
-    display: block;
-  }
-
-  /* Conteúdo geral das páginas internas */
-  .page-content {
-    padding: 140px 40px 80px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .page-title {
-    font-size: 2rem;
-    font-weight: 200;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    text-align: center;
-    position: relative;
-  }
-
-  .page-title::after {
-    content: "";
-    display: block;
-    width: 300px;
-    height: 1px;
-    background-color: #f5f5f5;
-    opacity: 0.5;
-    margin: 20px auto 0;
-  }
-
-  .section-title {
-    font-size: 1.3rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 60px 0 30px;
-    text-align: center;
-    position: relative;
-  }
-
-  .section-title::after {
-    content: "";
-    display: block;
-    width: 180px;
-    height: 1px;
-    background-color: #f5f5f5;
-    opacity: 0.5;
-    margin: 16px auto 0;
-  }
-
-  /* Secção 1: Sobre a banda */
-  .about-container {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    text-align: justify;
-  }
-
-  .about-img {
-    width: 45%;
-    border-radius: 4px;
-  }
-
-  .about-text {
-    width: 55%;
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  /* Secção 2: Membros */
-  .members-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-
-  .member-card {
-    text-align: justify;
-  }
-
-  .member-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
-
-  .member-card h3 {
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-size: 1rem;
-  }
-
-  .member-card p {
-    font-size: 0.9rem;
-    font-weight: 300;
-    opacity: 0.8;
-    line-height: 1.6;
-  }
-
-  /* Secção 3: Prémios */
-  .awards-list {
-    list-style: none;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .awards-list li {
-    display: flex;
-    gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    font-weight: 300;
-  }
-
-  .award-year {
-    opacity: 0.6;
-    min-width: 50px;
-  }
-
-  /* Conteúdo geral das páginas internas */
-  .page-content {
-      padding: 140px 40px 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-  }
-
-  .page-title {
-      font-size: 2rem;
-      font-weight: 200;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      margin-bottom: 60px;
-      text-align: center;
-      position: relative;
-  }
-
-  .page-title::after {
-      content: "";
-      display: block;
-      width: 300px;
-      height: 1px;
-      background-color: #f5f5f5;
-      opacity: 0.5;
-      margin: 20px auto 0;
-  }
-
-  .page-subtitle {
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      opacity: 0.7;
-      text-align: center;
-      margin-bottom: 40px;
-  }
-
-  /* Grid de repertório */
-  .repertoire-grid {
-      display: grid;
-      gap: 0;
-      grid-template-columns: 1fr;
-  }
-
-  .work {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(245, 245, 245, 0.15);
-      transition: opacity 0.3s ease;
-  }
-
-  .work:hover {
-      opacity: 0.8;
-  }
-
-  .work-info {
-      flex: 1;
-  }
-
-  .work-meta {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 12px;
-  }
-
-  .composer {
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.7;
-      min-width: 220px;
-  }
-
-  .work-title {
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      color: #f5f5f5;
-  }
-
-  .work-title a {
-      color: #f5f5f5;
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(245, 245, 245, 0.3);
-      transition: border-color 0.3s ease;
-  }
-
-  .work-title a:hover {
-      border-bottom-color: rgba(245, 245, 245, 0.6);
-  }
-
-  .commision {
-      display: inline;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: #f5f5f5;
-      margin-left: 8px;
-  }
-
-  .year {
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      opacity: 0.6;
-      text-align: right;
-      min-width: 80px;
-  }
-
-  /* Footer */
-  footer {
-      text-align: center;
-      padding: 80px 40px;
-      color: #f5f5f5;
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      opacity: 0.6;
-  }
-
-  footer::before {
-      content: "";
-      display: block;
-      width: 300px;
-      height: 1px;
-      background-color: #f5f5f5;
-      opacity: 0.5;
-      margin: 0 auto 40px;
-  }
-
-  @media (max-width: 768px) {
-      .page-content {
-          padding: 140px 20px 60px;
-      }
-
-      .page-title {
-          font-size: 1.5rem;
-          letter-spacing: 4px;
-          margin-bottom: 40px;
-      }
-
-      .work-meta {
-          flex-direction: column;
-          gap: 8px;
-          margin-bottom: 8px;
-      }
-
-      .composer {
-          min-width: auto;
-      }
-
-      .year {
-          text-align: left;
-          min-width: auto;
-      }
-
-      .work {
-          flex-direction: column;
-          padding: 18px 0;
-      }
-
-    
-  }
-
-  .commision-note {
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      opacity: 0.6;
-      text-align: right;
-      margin-bottom: 30px;
-      color: #f5f5f5;
-  }
-
-  @media (max-width: 768px) {
-      .commision-note {
-          font-size: 0.7rem;
-          margin-bottom: 20px;
-      }
-  }
-
-  /* Timeline - Agenda */
-  .timeline {
-      position: relative;
-      padding: 40px 0;
-  }
-
-  .timeline::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background-color: rgba(245, 245, 245, 0.2);
-  }
-
-  .timeline-item {
-      margin-bottom: 50px;
-      position: relative;
-  }
-
-  .timeline-item:nth-child(odd) .timeline-content {
-      margin-left: 0;
-      margin-right: 50%;
-      padding-right: 40px;
-      text-align: right;
-  }
-
-  .timeline-item:nth-child(even) .timeline-content {
-      margin-left: 50%;
-      margin-right: 0;
-      padding-left: 40px;
-      text-align: left;
-  }
-
-  .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 30px;
-      width: 12px;
-      height: 12px;
-      background-color: #0d0d0d;
-      border: 2px solid rgba(245, 245, 245, 0.5);
-      border-radius: 50%;
-      z-index: 10;
-      transition: all 0.3s ease;
-  }
-
-  .timeline-item:hover::before {
-      background-color: rgba(245, 245, 245, 0.3);
-      border-color: rgba(245, 245, 245, 0.8);
-  }
-
-  .timeline-content {
-      padding: 30px;
-      background-color: rgba(245, 245, 245, 0.03);
-      border: 1px solid rgba(245, 245, 245, 0.1);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-  }
-
-  .timeline-content:hover {
-      background-color: rgba(245, 245, 245, 0.05);
-      border-color: rgba(245, 245, 245, 0.2);
-  }
-
-  .event-date-badge {
-      display: inline-block;
-      text-align: center;
-      margin-bottom: 15px;
-  }
-
-  .event-date-badge .day {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-  }
-
-  .event-date-badge .month {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-top: 5px;
-  }
-
-  .event-title {
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-  }
-
-  .event-time {
-      font-size: 0.85rem;
-      font-weight: 300;
-      opacity: 0.7;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-  }
-
-  .event-location {
-      font-size: 0.85rem;
-      font-weight: 300;
-      opacity: 0.8;
-      margin-bottom: 15px;
-      letter-spacing: 0.5px;
-  }
-
-  .event-description {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.6;
-      opacity: 0.75;
-  }
-
-  @media (max-width: 768px) {
-      .timeline::before {
-          left: 20px;
-      }
-
-      .timeline-item::before {
-          left: 20px;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content,
-      .timeline-item:nth-child(even) .timeline-content {
-          margin-left: 60px;
-          margin-right: 0;
-          padding-left: 30px;
-          padding-right: 30px;
-          text-align: left;
-      }
-  }
-
-/* Events Tabs */
+/* Reset básico — remove espaçamentos padrão do browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+}
+
+/* Cabeçalho / menu de navegação */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: rgba(13, 13, 13, 0.3);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+}
+
+.socials a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.socials a:hover {
+  opacity: 0.6;
+}
+
+/* Secção principal (hero) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero-text {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 200;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Conteúdo geral das páginas internas */
+.page-content {
+  padding: 140px 40px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+  margin: 20px auto 0;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 60px 0 30px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 1px;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+  margin: 16px auto 0;
+}
+
+/* Secção Sobre */
+.about-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  text-align: justify;
+}
+
+.about-img {
+  width: 45%;
+  border-radius: 4px;
+}
+
+.about-text {
+  width: 55%;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Secção Membros */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.member-card {
+  text-align: justify;
+}
+
+.member-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.member-card h3 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.member-card p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Secção Prémios */
+.awards-list {
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.awards-list li {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+}
+
+.award-year {
+  opacity: 0.6;
+  min-width: 50px;
+}
+
+/* Repertório */
+.repertoire-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr;
+}
+
+.work {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+  transition: opacity 0.3s ease;
+}
+
+.work:hover {
+  opacity: 0.8;
+}
+
+.work-info {
+  flex: 1;
+}
+
+.work-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 12px;
+}
+
+.composer {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  min-width: 220px;
+}
+
+.work-title {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #f5f5f5;
+}
+
+.work-title a {
+  color: #f5f5f5;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(245, 245, 245, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.work-title a:hover {
+  border-bottom-color: rgba(245, 245, 245, 0.6);
+}
+
+.commision {
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f5f5f5;
+  margin-left: 8px;
+}
+
+.commision-note {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  text-align: right;
+  margin-bottom: 30px;
+  color: #f5f5f5;
+}
+
+.year {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  text-align: right;
+  min-width: 80px;
+}
+
+/* Agenda - Tabs */
 .events-tabs {
-    position: relative;
+  position: relative;
 }
 
 input[type="radio"][name="event-tabs"] {
-    display: none;
+  display: none;
 }
 
 .tabs-header {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
-    padding-bottom: 20px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+  padding-bottom: 20px;
 }
 
 .tab-label {
-    font-size: 0.9rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.6;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    padding-bottom: 10px;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -30px;
-    padding-bottom: 30px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -30px;
+  padding-bottom: 30px;
 }
 
 .tab-label:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 #tab-proximos:checked ~ .tabs-header label[for="tab-proximos"],
 #tab-passados:checked ~ .tabs-header label[for="tab-passados"] {
-    opacity: 1;
-    border-bottom-color: rgba(245, 245, 245, 0.5);
+  opacity: 1;
+  border-bottom-color: rgba(245, 245, 245, 0.5);
 }
 
 .tab-content {
-    display: none;
+  display: none;
 }
 
 #tab-proximos:checked ~ #proximos,
 #tab-passados:checked ~ #passados {
-    display: block;
+  display: block;
 }
 
-/* TIMELINE - Próximos Eventos */
+/* Timeline - Próximos Eventos */
 .timeline {
-    position: relative;
-    padding: 40px 0;
+  position: relative;
+  padding: 40px 0;
 }
 
 .timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: rgba(245, 245, 245, 0.2);
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(245, 245, 245, 0.2);
 }
 
 .timeline-item {
-    margin-bottom: 50px;
-    position: relative;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-left: 0;
-    margin-right: 50%;
-    padding-right: 40px;
-    text-align: right;
+  margin-left: 0;
+  margin-right: 50%;
+  padding-right: 40px;
+  text-align: right;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-left: 50%;
-    margin-right: 0;
-    padding-left: 40px;
-    text-align: left;
+  margin-left: 50%;
+  margin-right: 0;
+  padding-left: 40px;
+  text-align: left;
 }
 
 .timeline-item::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30px;
-    width: 12px;
-    height: 12px;
-    background-color: #0d0d0d;
-    border: 2px solid rgba(245, 245, 245, 0.5);
-    border-radius: 50%;
-    z-index: 10;
-    transition: all 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  width: 12px;
+  height: 12px;
+  background-color: #0d0d0d;
+  border: 2px solid rgba(245, 245, 245, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .timeline-item:hover::before {
-    background-color: rgba(245, 245, 245, 0.3);
-    border-color: rgba(245, 245, 245, 0.8);
+  background-color: rgba(245, 245, 245, 0.3);
+  border-color: rgba(245, 245, 245, 0.8);
+}
+
+/* Remove as bolas dos events cards (passados) */
+.timeline-item.event-card::before {
+  display: none !important;
 }
 
 .timeline-content {
-    padding: 30px;
-    background-color: rgba(245, 245, 245, 0.03);
-    border: 1px solid rgba(245, 245, 245, 0.1);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+  padding: 30px;
+  background-color: rgba(245, 245, 245, 0.03);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
-    background-color: rgba(245, 245, 245, 0.05);
-    border-color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.05);
+  border-color: rgba(245, 245, 245, 0.2);
 }
 
 .event-date-badge {
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 15px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .event-date-badge .day {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .event-date-badge .month {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.6;
-    margin-top: 5px;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 5px;
 }
 
 .event-title {
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .event-time {
-    font-size: 0.85rem;
-    font-weight: 300;
-    opacity: 0.7;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 .event-location {
-    font-size: 0.85rem;
-    font-weight: 300;
-    opacity: 0.8;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
 }
 
 .event-description {
-    font-size: 0.9rem;
-    font-weight: 300;
-    line-height: 1.6;
-    opacity: 0.75;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.75;
 }
 
 /* CARDS - Eventos Passados */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
 }
 
 .event-card {
-    display: flex;
-    gap: 30px;
-    padding: 30px;
-    background-color: rgba(245, 245, 245, 0.03);
-    border: 1px solid rgba(245, 245, 245, 0.1);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  background-color: rgba(245, 245, 245, 0.03);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .event-card:hover {
-    background-color: rgba(245, 245, 245, 0.05);
-    border-color: rgba(245, 245, 245, 0.2);
+  background-color: rgba(245, 245, 245, 0.05);
+  border-color: rgba(245, 245, 245, 0.2);
 }
 
 .event-card .event-date-badge {
-    min-width: 80px;
-    flex-shrink: 0;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
 .event-card .event-date-badge .day {
-    font-size: 2rem;
-    color: #d4a574;
+  font-size: 2rem;
+  color: #d4a574;
 }
 
 .event-card .event-date-badge .month {
-    color: #d4a574;
+  color: #d4a574;
 }
 
 .event-card-content {
-    flex: 1;
+  flex: 1;
 }
 
 .event-card .event-title {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .event-card .event-time {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .event-card .event-location {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .event-card .event-description {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item::before {
-        left: 20px;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 60px;
-        margin-right: 0;
-        padding-left: 30px;
-        padding-right: 30px;
-        text-align: left;
-    }
-
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .event-card {
-        flex-direction: column;
-    }
+  margin: 0;
 }
 
 /* Floating Next Concert Card */
 .floating-concert {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: rgba(245, 245, 245, 0.05);
-    border: 1px solid rgba(245, 245, 245, 0.15);
-    border-radius: 2px;
-    padding: 25px;
-    max-width: 350px;
-    backdrop-filter: blur(10px);
-    z-index: 50;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgba(245, 245, 245, 0.05);
+  border: 1px solid rgba(245, 245, 245, 0.15);
+  border-radius: 2px;
+  padding: 25px;
+  max-width: 350px;
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .floating-concert:hover {
-    background-color: rgba(245, 245, 245, 0.08);
-    border-color: rgba(245, 245, 245, 0.25);
-    transform: translateY(-5px);
+  background-color: rgba(245, 245, 245, 0.08);
+  border-color: rgba(245, 245, 245, 0.25);
+  transform: translateY(-5px);
 }
 
 .floating-concert-label {
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.6;
-    margin-bottom: 12px;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 12px;
 }
 
 .floating-concert-date {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
 
 .floating-concert-month {
-    font-size: 0.85rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-bottom: 15px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 15px;
 }
 
 .floating-concert-title {
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .floating-concert-time {
-    font-size: 0.85rem;
-    font-weight: 300;
-    opacity: 0.7;
-    margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 8px;
 }
 
 .floating-concert-location {
-    font-size: 0.85rem;
-    font-weight: 300;
-    opacity: 0.8;
-    margin-bottom: 15px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-bottom: 15px;
 }
 
 .floating-concert-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #f5f5f5;
-    text-decoration: none;
-    border: 1px solid rgba(245, 245, 245, 0.3);
-    padding: 10px 20px;
-    transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  text-decoration: none;
+  border: 1px solid rgba(245, 245, 245, 0.3);
+  padding: 10px 20px;
+  transition: all 0.3s ease;
 }
 
 .floating-concert-link:hover {
-    background-color: rgba(245, 245, 245, 0.1);
-    border-color: rgba(245, 245, 245, 0.6);
+  background-color: rgba(245, 245, 245, 0.1);
+  border-color: rgba(245, 245, 245, 0.6);
 }
 
-@media (max-width: 768px) {
-    .floating-concert {
-        bottom: 20px;
-        right: 20px;
-        max-width: 280px;
-        padding: 20px;
-    }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 80px 40px;
+  color: #f5f5f5;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
 
-    .floating-concert-date {
-        font-size: 1.5rem;
-    }
+footer::before {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+  margin: 0 auto 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 140px 20px 60px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+  }
+
+  .work-meta {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .composer {
+    min-width: auto;
+  }
+
+  .year {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .work {
+    flex-direction: column;
+    padding: 18px 0;
+  }
+
+  .commision-note {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-img,
+  .about-text {
+    width: 100%;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item::before {
+    left: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    flex-direction: column;
+  }
+
+  .floating-concert {
+    bottom: 20px;
+    right: 20px;
+    max-width: 280px;
+    padding: 20px;
+  }
+
+  .floating-concert-date {
+    font-size: 1.5rem;
+  }
 }
