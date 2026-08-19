@@ -27,6 +27,14 @@ body {
   z-index: 100;
 }
 
+/* Navbar - Link Ativo */
+.nav-links a.active {
+    opacity: 1;
+    background-color: rgba(245, 245, 245, 0.1);
+    padding: 8px 12px;
+    border-radius: 2px;
+}
+
 .logo {
   color: #f5f5f5;
   text-decoration: none;
