@@ -765,7 +765,6 @@ footer::before {
     font-size: 1.5rem;
   }
 }
-
 /* Contactos */
 .contact-section {
     display: flex;
@@ -858,4 +857,49 @@ footer::before {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    flex-direction:
+    flex-direction: column;
+    align-items: center;
+}
+
+.socials-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.socials-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.socials-links a:hover {
+    opacity: 0.6;
+}
+
+.socials-links i {
+    font-size: 2rem;
+    color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .contact-top {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .socials-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
