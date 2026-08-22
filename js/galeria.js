@@ -14,6 +14,7 @@ const photos = [
         alt: 'RePercussion Trio',
         size: 'large'
     },
+
     {
         thumb: 'imagens/galeria/foto2.jpg',
         full: 'imagens/galeria/foto2.jpg',
@@ -21,7 +22,7 @@ const photos = [
         size: 'small'
     }
 
-    // Podes adicionar mais fotografias aqui:
+    // Para adicionar mais fotografias:
     //
     // {
     //     thumb: 'imagens/galeria/foto3.jpg',
@@ -105,35 +106,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ==========================================
-// CARREGAR GALERIA MASONRY
+// CARREGAR GALERIA
 // ==========================================
 
 function loadMasonryGallery() {
 
-    const masonry = document.getElementById('gallery-masonry');
+    const masonry =
+        document.getElementById('gallery-masonry');
 
     if (!masonry) {
-        console.error('Elemento #gallery-masonry não encontrado.');
+        console.error(
+            'Elemento #gallery-masonry não encontrado.'
+        );
         return;
     }
 
-    // Limpa a galeria antes de carregar
+
+    // Limpa a galeria
+
     masonry.innerHTML = '';
 
-    // Array que vai misturar fotografias e vídeos
-    const galleryItems = [];
+
+    // Array geral
+
+    let galleryItems = [];
 
 
     // ======================================
     // ADICIONAR FOTOGRAFIAS
     // ======================================
 
-    photos.forEach((photo, index) => {
+    photos.forEach(function (photo, index) {
 
         galleryItems.push({
+
             type: 'photo',
+
             data: photo,
+
             index: index
+
         });
 
     });
@@ -143,45 +155,52 @@ function loadMasonryGallery() {
     // ADICIONAR VÍDEOS
     // ======================================
 
-    videos.forEach((video, index) => {
+    videos.forEach(function (video, index) {
 
         galleryItems.push({
+
             type: 'video',
+
             data: video,
+
             index: index
+
         });
 
     });
 
 
     // ======================================
-    // MISTURAR OS ELEMENTOS
+    // RANDOM
     // ======================================
 
-    const shuffledItems = shuffleArray(galleryItems);
+    galleryItems =
+        shuffleArray(galleryItems);
 
 
     // ======================================
     // RENDERIZAR
     // ======================================
 
-    shuffledItems.forEach((item) => {
+    galleryItems.forEach(function (item) {
 
         if (item.type === 'photo') {
 
-            const photoDiv = createPhotoItem(
-                item.data,
-                item.index
-            );
+            const photoDiv =
+                createPhotoItem(
+                    item.data,
+                    item.index
+                );
 
             masonry.appendChild(photoDiv);
 
         } else {
 
-            const videoDiv = createVideoItem(
-                item.data,
-                item.index
-            );
+            const videoDiv =
+                createVideoItem(
+                    item.data,
+                    item.index
+                );
 
             masonry.appendChild(videoDiv);
 
@@ -198,11 +217,12 @@ function loadMasonryGallery() {
 
 function createPhotoItem(photo, index) {
 
-    const div = document.createElement('div');
+    const div =
+        document.createElement('div');
 
 
-    // Classe baseada no tamanho definido na fotografia
-    div.className = `gallery-item photo-item size-${photo.size}`;
+    div.className =
+        `gallery-item photo-item size-${photo.size}`;
 
 
     div.innerHTML = `
@@ -223,12 +243,16 @@ function createPhotoItem(photo, index) {
     `;
 
 
-    // Abrir Lightbox ao clicar
-    div.addEventListener('click', function () {
+    // Abrir Lightbox
 
-        openLightbox(index);
+    div.addEventListener(
+        'click',
+        function () {
 
-    });
+            openLightbox(index);
+
+        }
+    );
 
 
     return div;
@@ -242,42 +266,90 @@ function createPhotoItem(photo, index) {
 
 function createVideoItem(video, index) {
 
-    const div = document.createElement('div');
+    const div =
+        document.createElement('div');
 
 
     // ======================================
-    // TAMANHOS DIFERENTES DOS VÍDEOS
+    // TAMANHOS DOS VÍDEOS
     // ======================================
 
     const videoSizes = [
 
         'size-large',
+
         'size-medium',
+
         'size-small',
+
         'size-large',
+
         'size-medium',
+
         'size-small'
 
     ];
 
 
     const selectedSize =
-        videoSizes[index % videoSizes.length];
+        videoSizes[
+            index % videoSizes.length
+        ];
 
 
     div.className =
         `gallery-item video-item ${selectedSize}`;
 
 
+    // ======================================
+    // CRIAR THUMBNAIL
+    // ======================================
+
+    const thumbnail =
+        document.createElement('img');
+
+
+    // Tenta primeiro a versão de maior resolução
+
+    thumbnail.src =
+        `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`;
+
+
+    thumbnail.alt =
+        video.title;
+
+
+    thumbnail.className =
+        'video-thumb-img';
+
+
+    // ======================================
+    // FALLBACK
+    // ======================================
+
+    thumbnail.onerror =
+        function () {
+
+            // Evita loop infinito
+
+            this.onerror = null;
+
+
+            // Usa versão alternativa
+
+            this.src =
+                `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+
+        };
+
+
+    // ======================================
+    // HTML DO ITEM
+    // ======================================
+
     div.innerHTML = `
 
         <div class="video-thumbnail">
-
-            <img
-                src="${video.thumb}"
-                alt="${video.title}"
-                class="video-thumb-img"
-            >
 
             <div class="video-play-icon">
 
@@ -307,12 +379,33 @@ function createVideoItem(video, index) {
     `;
 
 
-    // Abrir YouTube ao clicar
-    div.addEventListener('click', function () {
+    // Inserir imagem
 
-        openYouTubeModal(video.id);
+    const thumbnailContainer =
+        div.querySelector(
+            '.video-thumbnail'
+        );
 
-    });
+
+    thumbnailContainer.prepend(
+        thumbnail
+    );
+
+
+    // ======================================
+    // ABRIR YOUTUBE
+    // ======================================
+
+    div.addEventListener(
+        'click',
+        function () {
+
+            openYouTubeModal(
+                video.id
+            );
+
+        }
+    );
 
 
     return div;
@@ -321,12 +414,13 @@ function createVideoItem(video, index) {
 
 
 // ==========================================
-// FUNÇÃO PARA MISTURAR ELEMENTOS
+// SHUFFLE / RANDOM
 // ==========================================
 
 function shuffleArray(array) {
 
-    const newArray = [...array];
+    const newArray =
+        [...array];
 
 
     for (
@@ -336,7 +430,9 @@ function shuffleArray(array) {
     ) {
 
         const j =
-            Math.floor(Math.random() * (i + 1));
+            Math.floor(
+                Math.random() * (i + 1)
+            );
 
 
         [
@@ -357,22 +453,33 @@ function shuffleArray(array) {
 
 
 // ==========================================
-// LIGHTBOX DAS FOTOGRAFIAS
+// LIGHTBOX
 // ==========================================
 
 function initLightbox() {
 
     const lightbox =
-        document.getElementById('lightbox');
+        document.getElementById(
+            'lightbox'
+        );
+
 
     const closeBtn =
-        document.querySelector('.lightbox-close');
+        document.querySelector(
+            '.lightbox-close'
+        );
+
 
     const prevBtn =
-        document.getElementById('lightbox-prev');
+        document.getElementById(
+            'lightbox-prev'
+        );
+
 
     const nextBtn =
-        document.getElementById('lightbox-next');
+        document.getElementById(
+            'lightbox-next'
+        );
 
 
     if (!lightbox) {
@@ -381,6 +488,7 @@ function initLightbox() {
 
 
     // Fechar
+
     if (closeBtn) {
 
         closeBtn.addEventListener(
@@ -392,6 +500,7 @@ function initLightbox() {
 
 
     // Anterior
+
     if (prevBtn) {
 
         prevBtn.addEventListener(
@@ -407,6 +516,7 @@ function initLightbox() {
 
 
     // Seguinte
+
     if (nextBtn) {
 
         nextBtn.addEventListener(
@@ -421,7 +531,8 @@ function initLightbox() {
     }
 
 
-    // Clicar fora da imagem fecha
+    // Clicar fora
+
     lightbox.addEventListener(
         'click',
         function (e) {
@@ -437,6 +548,7 @@ function initLightbox() {
 
 
     // Teclado
+
     document.addEventListener(
         'keydown',
         function (e) {
@@ -445,19 +557,27 @@ function initLightbox() {
                 lightbox.style.display === 'flex'
             ) {
 
-                if (e.key === 'ArrowLeft') {
+                if (
+                    e.key === 'ArrowLeft'
+                ) {
 
                     navigateLightbox(-1);
 
                 }
 
-                if (e.key === 'ArrowRight') {
+
+                if (
+                    e.key === 'ArrowRight'
+                ) {
 
                     navigateLightbox(1);
 
                 }
 
-                if (e.key === 'Escape') {
+
+                if (
+                    e.key === 'Escape'
+                ) {
 
                     closeLightbox();
 
@@ -478,14 +598,25 @@ function initLightbox() {
 function openLightbox(index) {
 
     const lightbox =
-        document.getElementById('lightbox');
+        document.getElementById(
+            'lightbox'
+        );
+
 
     const lightboxImage =
-        document.getElementById('lightbox-image');
+        document.getElementById(
+            'lightbox-image'
+        );
 
 
-    if (!lightbox || !lightboxImage) {
+    if (
+        !lightbox ||
+        !lightboxImage ||
+        !photos[index]
+    ) {
+
         return;
+
     }
 
 
@@ -497,7 +628,8 @@ function openLightbox(index) {
         photos[index].alt;
 
 
-    lightbox.style.display = 'flex';
+    lightbox.style.display =
+        'flex';
 
 
     lightbox.dataset.currentIndex =
@@ -517,7 +649,9 @@ function openLightbox(index) {
 function closeLightbox() {
 
     const lightbox =
-        document.getElementById('lightbox');
+        document.getElementById(
+            'lightbox'
+        );
 
 
     if (!lightbox) {
@@ -542,7 +676,19 @@ function closeLightbox() {
 function navigateLightbox(direction) {
 
     const lightbox =
-        document.getElementById('lightbox');
+        document.getElementById(
+            'lightbox'
+        );
+
+
+    if (
+        !lightbox ||
+        photos.length === 0
+    ) {
+
+        return;
+
+    }
 
 
     let currentIndex =
@@ -556,6 +702,7 @@ function navigateLightbox(direction) {
 
 
     // Voltar ao último
+
     if (newIndex < 0) {
 
         newIndex =
@@ -565,7 +712,10 @@ function navigateLightbox(direction) {
 
 
     // Voltar ao primeiro
-    if (newIndex >= photos.length) {
+
+    if (
+        newIndex >= photos.length
+    ) {
 
         newIndex = 0;
 
@@ -584,10 +734,15 @@ function navigateLightbox(direction) {
 function initYouTubeModal() {
 
     const modal =
-        document.getElementById('youtube-modal');
+        document.getElementById(
+            'youtube-modal'
+        );
+
 
     const closeBtn =
-        document.querySelector('.youtube-close');
+        document.querySelector(
+            '.youtube-close'
+        );
 
 
     if (!modal) {
@@ -595,7 +750,8 @@ function initYouTubeModal() {
     }
 
 
-    // Fechar botão X
+    // Fechar botão
+
     if (closeBtn) {
 
         closeBtn.addEventListener(
@@ -607,6 +763,7 @@ function initYouTubeModal() {
 
 
     // Clicar fora
+
     modal.addEventListener(
         'click',
         function (e) {
@@ -622,6 +779,7 @@ function initYouTubeModal() {
 
 
     // ESC
+
     document.addEventListener(
         'keydown',
         function (e) {
@@ -648,14 +806,24 @@ function initYouTubeModal() {
 function openYouTubeModal(videoId) {
 
     const modal =
-        document.getElementById('youtube-modal');
+        document.getElementById(
+            'youtube-modal'
+        );
+
 
     const iframe =
-        document.getElementById('youtube-iframe');
+        document.getElementById(
+            'youtube-iframe'
+        );
 
 
-    if (!modal || !iframe) {
+    if (
+        !modal ||
+        !iframe
+    ) {
+
         return;
+
     }
 
 
@@ -680,18 +848,29 @@ function openYouTubeModal(videoId) {
 function closeYouTubeModal() {
 
     const modal =
-        document.getElementById('youtube-modal');
+        document.getElementById(
+            'youtube-modal'
+        );
+
 
     const iframe =
-        document.getElementById('youtube-iframe');
+        document.getElementById(
+            'youtube-iframe'
+        );
 
 
-    if (!modal || !iframe) {
+    if (
+        !modal ||
+        !iframe
+    ) {
+
         return;
+
     }
 
 
     // Para o vídeo
+
     iframe.src = '';
 
 
