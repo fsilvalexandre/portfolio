@@ -8,7 +8,7 @@ const photos = [
     },
     {
         thumb: 'imagens/galeria/foto2.jpg',
-        full: 'iimagens/galeria/foto2.jpg',
+        full: 'imagens/galeria/foto2.jpg',
         alt: 'Membro 1',
         size: 'medium'
         }
