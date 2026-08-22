@@ -134,5 +134,58 @@ Atualmente é professor de percussão no Conservatório de Música da Jobra.</p>
     </section>
   </main>
 
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const memberData = [
+    {
+      name: 'Alexandre Silva',
+      img: 'imagens/membro1.png',
+      alt: 'Alexandre Silva',
+      bio: 'Alexandre Ferreira Silva (n. 1997) é um percussionista e performer profundamente dedicado ao desenvolvimento da música contemporânea. Tem sido reconhecido em vários concursos de prestígio. De salientar o 2º Prémio no Concours Nicati 2023, um 3º lugar no Prémio Jovens Músicos 2019 para Percussão em Portugal, o prémio Helena Sá e Costa 2020, e um notável 1º prémio para Snare Drum no "Festival Internacional Tomarimbando" 2017.\n\nCom um portfólio diversificado de experiências, Alexandre tem colaborado e participado com vários festivais e grupos musicais de renome, como o Donaueschinger Musiktage, Darmstädter Ferienkurse, Drumming GP, Orquestra de Câmara Portuguesa, Basel Sinfonieorchester, Dresden Festival Orchestra e Neue Philharmonie München e é também reforço da Orquestra Filarmonia das Beiras. Na temporada 2014/2015 foi selecionado para integrar a Orquestra Portuguesa de Jovens (JOP).\n\nAlexandre tem mestrado em performance sob a orientação de Christian Dierstein e um mestrado em Música Contemporânea e Pedagogia na Musik-Akademie Basel. Antes dos seus estudos em Basileia, Alexandre licenciou-se na Escola Superior de Música e Artes do Espetáculo (ESMAE) no Porto, com Miquel Bernat e Manuel Campos.'
+    },
+    {
+      name: 'Daniel Araújo',
+      img: 'imagens/membro2.jpg',
+      alt: 'Daniel Araújo',
+      bio: 'Daniel Fernando Oliveira Araújo (n.1996), é percussionista formado na Escola Superior de Música e Artes do Espetáculo (ESMAE), tendo obtido o grau de Mestre em Ensino de Música em 2021 após ter concluído a licenciatura em Percussão em 2019 na mesma instituição.\nDos vários agrupamentos com quem já colaborou destacam-se a Orquestra Sinfónica do Porto - Casa da Música, Drumming Grupo de Percussão e Banda Sinfónica Portuguesa. Entre 2020 e 2021 integrou a orquestra do circo do Coliseu do Porto AGEAS.\n\nEm concursos alcançou os seguintes prémios: Vencedor do prémio Helena Sá e Costa em duo com o percussionista Jorge Pereira (2019);\n3º lugar em "Concurso Internacional de Percussão – Gondomar" (2018);\nPrémio Scherzo Editions – Melhor interpretação da obra obrigatória da compositora residente Ângela da Ponte no "Concurso Internacional de Percussão – Gondomar" (2018);\n2° lugar em "Italy Percussive Arts Society - Snare Drum Competition" Cat. B (2017);\n3º lugar em "Tomarimbando – Snare Drum competiton" Cat. B (2016).\n\nApresenta-se nos seguintes registos discográficos:\nPeixinho Patriarca Percussão, Drumming GP, 2021;\nNight & Day, Banda Sinfónica Portuguesa, 2020;\nThe Ghost Ship, Banda Sinfónica Portuguesa, 2018\n\nAtualmente, é professor de percussão na Academia de Música de Oliveira de Azeméis.'
+    },
+    {
+      name: 'Jorge Pereira',
+      img: 'imagens/membro3.jpg',
+      alt: 'Jorge Pereira',
+      bio: 'Jorge Pereira (n.1998) realizou a sua formação em percussão na Escola Superior de Música e Artes do Espetáculo (ESMAE), onde obteve o grau de Mestre em ensino de música no ano de 2022, depois de concluir a licenciatura na mesma instituição em 2020, sob orientação dos professores Manuel Campos e Miquel Bernat.\n\nIniciou o seu percurso musical na Filarmónica Severense em 2007 e concluiu em 2016 o Curso Profissional de Instrumentista de Sopros e Percussão no Conservatório de Música da Jobra.\nAo longo das suas participações em concursos, foi vencedor em 2019 do Prémio Helena Sá e Costa em Duo, com o percussionista Daniel Araújo e conquistou o 3o lugar no XIII International Competition Paços Premium 2019, Percussion Competition.\n\nEnquanto intérprete destaca-se as colaborações com o Drumming GP, Banda Sinfónica Portuguesa, Orquestra Filarmonia das Beiras, MUDA\'TE e Foco Musical.\nAtualmente é professor de percussão no Conservatório de Música da Jobra.'
+    }
+  ];
+
+  const buttons = document.querySelectorAll('.member-btn');
+  const memberDetail = document.getElementById('member-detail');
+
+  function showMember(index) {
+    const member = memberData[index];
+    const paragraphs = member.bio.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    
+    memberDetail.innerHTML = `
+      <img src="${member.img}" alt="${member.alt}">
+      <h3>${member.name}</h3>
+      ${paragraphs}
+    `;
+
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.dataset.member);
+      showMember(index);
+    });
+  });
+
+  // Mostrar primeiro membro por padrão
+  showMember(0);
+});
+</script>
+
 </body>
 </html>
