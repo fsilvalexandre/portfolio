@@ -1572,6 +1572,16 @@ footer::before {
 
 @media (max-width: 768px) {
 
+  /* Mostrar hamburger em mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Esconder nav links desktop */
+  .nav-links {
+    display: none;
+  }
+   
   .page-content {
     padding: 140px 20px 60px;
   }
