@@ -134,7 +134,7 @@ Atualmente é professor de percussão no Conservatório de Música da Jobra.</p>
     </section>
   </main>
 
-  <script>
+ <script>
 document.addEventListener('DOMContentLoaded', function() {
   const memberData = [
     {
@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const buttons = document.querySelectorAll('.member-btn');
   const memberDetail = document.getElementById('member-detail');
+  let currentMember = null; // Rastreia qual membro está aberto
 
   function showMember(index) {
     const member = memberData[index];
@@ -173,19 +174,37 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach((btn, i) => {
       btn.classList.toggle('active', i === index);
     });
+
+    currentMember = index;
+  }
+
+  function hideMember() {
+    memberDetail.innerHTML = '';
+    buttons.forEach((btn) => {
+      btn.classList.remove('active');
+    });
+
+    currentMember = null;
   }
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const index = parseInt(btn.dataset.member);
-      showMember(index);
+
+      // Se clicou no mesmo membro, faz toggle (mostrar/esconder)
+      if (currentMember === index) {
+        hideMember();
+      } else {
+        // Se clicou noutro, mostra o novo
+        showMember(index);
+      }
     });
   });
 
-  // Mostrar primeiro membro por padrão
-  showMember(0);
+  // NÃO mostra ninguém por padrão
 });
 </script>
 
+  
 </body>
 </html>
