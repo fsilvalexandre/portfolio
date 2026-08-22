@@ -1566,6 +1566,63 @@ footer::before {
   }
 }
 
+/* =========================================================
+   LANGUAGE SELECTOR
+   ========================================================= */
+
+.language-selector {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.language-btn {
+  padding: 8px 14px;
+  border: 1px solid rgba(245, 245, 245, 0.3);
+  background-color: transparent;
+  color: #f5f5f5;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.language-btn:hover {
+  background-color: rgba(245, 245, 245, 0.1);
+  border-color: rgba(245, 245, 245, 0.6);
+}
+
+.language-btn.active {
+  background-color: rgba(245, 245, 245, 0.1);
+  border-color: rgba(245, 245, 245, 0.5);
+  opacity: 1;
+}
+
+/* Mobile - Language selector no menu */
+@media (max-width: 768px) {
+  .language-selector {
+    display: none;
+  }
+
+  .mobile-language-selector {
+    display: flex;
+  }
+}
+
+.mobile-language-selector {
+  display: none;
+  gap: 12px;
+  justify-content: center;
+}
+
+.mobile-language-selector .language-btn {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  flex: 1;
+}
 
 /* =========================================================
    RESPONSIVE - 900px
