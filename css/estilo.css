@@ -1603,6 +1603,8 @@ footer::before {
 
 @media (max-width: 768px) {
 
+  @media (max-width: 768px) {
+
   /* ===== NAVBAR MOBILE ===== */
   .navbar {
     padding: 15px 20px;
@@ -1611,17 +1613,20 @@ footer::before {
   }
 
   .logo {
-    order: 1;
+    position: absolute;
+    left: 20px;
   }
 
   .logo img {
     height: 60px;
   }
 
-  /* Mostrar hamburger centrado à direita */
+  /* Hamburger CENTRADO */
   .hamburger {
     display: flex;
-    order: 3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   /* Esconder nav links desktop */
@@ -1629,7 +1634,7 @@ footer::before {
     display: none;
   }
 
-  /* Esconder socials da navbar (vão para o menu mobile) */
+  /* Esconder socials da navbar */
   .socials {
     display: none;
   }
@@ -1638,7 +1643,6 @@ footer::before {
   .mobile-socials {
     display: flex;
   }
-
 
   /* ===== PAGE CONTENT ===== */
   .page-content {
