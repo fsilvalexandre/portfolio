@@ -11,15 +11,43 @@ const photos = [
     {
         thumb: 'imagens/galeria/foto1.jpg',
         full: 'imagens/galeria/foto1.jpg',
-        alt: 'RePercussion Trio',
+        alt: 'RePercussion Trio - Intermitências',
         size: 'large'
     },
 
     {
         thumb: 'imagens/galeria/foto2.jpg',
         full: 'imagens/galeria/foto2.jpg',
-        alt: 'Membro 1',
+        alt: 'RePercussion Trio - Intermitências',
         size: 'small'
+    },
+
+        {
+        thumb: 'imagens/galeria/foto3.jpg',
+        full: 'imagens/galeria/foto3.jpg',
+        alt: 'RePercussion Trio - Póvoa de Varzim',
+        size: 'medium'
+    },
+    
+        {
+        thumb: 'imagens/galeria/foto4.jpg',
+        full: 'imagens/galeria/foto4.jpg',
+        alt: 'RePercussion Trio - Um Quadro',
+        size: 'small'
+    },
+
+            {
+        thumb: 'imagens/galeria/foto5.jpg',
+        full: 'imagens/galeria/foto5.jpg',
+        alt: 'RePercussion Trio - Decoder',
+        size: 'large'
+    },
+
+          {
+        thumb: 'imagens/galeria/foto6.jpg',
+        full: 'imagens/galeria/foto6.jpg',
+        alt: 'RePercussion Trio - Um Quadro',
+        size: 'medium'
     }
 
     // Para adicionar mais fotografias:
