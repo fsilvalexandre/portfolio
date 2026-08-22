@@ -5,7 +5,28 @@
         "title": "Intermitências",
         "time": "21:30",
         "location": "Auditório Municipal Sá de Miranda, Viana do Castelo",
-        "description": "Obras de: Works by: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
+        "description": "Obras de: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
         "date": "2026-09-04"
+    },
+
+    
+        {
+        "day": "13",
+        "month": "Fev",
+        "title": "Festmus - reCREA",
+        "time": "19:30",
+        "location": "Auditori i Palau de Congressos de Castelló",
+        "description": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], , Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]"
+        "date": "2026-02-13"
+    },
+        {
+        "day": "12",
+        "month": "Dez",
+        "title": "Metatempo - Festival DME",
+        "time": "19:30",
+        "location": "Auditório de Seia",
+        "description": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan"
+        "date": "2025-12-08"
     }
+    
 ]
