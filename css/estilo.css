@@ -21,7 +21,7 @@ body {
 
 
 /* =========================================================
-   CABEÇALHO / MENU
+   CABEÇALHO / MENU DE NAVEGAÇÃO
    ========================================================= */
 
 .navbar {
@@ -39,8 +39,6 @@ body {
 }
 
 
-/* Navbar - Link Ativo */
-
 .nav-links a.active {
   opacity: 1;
   background-color: rgba(245, 245, 245, 0.1);
@@ -56,6 +54,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 
 .logo img {
   height: 80px;
@@ -152,7 +151,7 @@ body {
 
 
 /* =========================================================
-   CONTEÚDO GERAL
+   CONTEÚDO GERAL DAS PÁGINAS
    ========================================================= */
 
 .page-content {
@@ -285,7 +284,7 @@ body {
 
 
 /* =========================================================
-   PRÉMIOS
+   SECÇÃO PRÉMIOS
    ========================================================= */
 
 .awards-list {
@@ -440,10 +439,9 @@ input[type="radio"][name="event-tabs"] {
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   border-bottom: 2px solid transparent;
   margin-bottom: -30px;
-  padding-bottom: 30px;
 }
 
 
@@ -535,8 +533,6 @@ input[type="radio"][name="event-tabs"] {
   border-color: rgba(245, 245, 245, 0.8);
 }
 
-
-/* Remove as bolas dos events cards (passados) */
 
 .timeline-item.event-card::before {
   display: none !important;
@@ -816,7 +812,7 @@ footer::before {
 
 
 /* =========================================================
-   MOBILE MEMBERS TABS
+   MOBILE MEMBERS
    ========================================================= */
 
 .members-mobile {
@@ -894,25 +890,6 @@ footer::before {
 
 
 /* =========================================================
-   ANIMAÇÃO
-   ========================================================= */
-
-@keyframes fadeInUp {
-
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-
-/* =========================================================
    CONTACTOS
    ========================================================= */
 
@@ -932,8 +909,6 @@ footer::before {
   align-items: center;
 }
 
-
-/* Email - Centrado */
 
 .contact-email {
   text-align: center;
@@ -968,8 +943,6 @@ footer::before {
   border-bottom-color: rgba(245, 245, 245, 0.6);
 }
 
-
-/* Fotografias - Centrado */
 
 .press-photos-section {
   text-align: center;
@@ -1015,8 +988,6 @@ footer::before {
   margin-right: 10px;
 }
 
-
-/* Redes Sociais - Centrado */
 
 .socials-section {
   text-align: center;
@@ -1064,70 +1035,71 @@ footer::before {
 
 
 /* =========================================================
-   GALERIA MASONRY
+   GALERIA
    ========================================================= */
 
 .gallery-masonry {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 70px;
-  gap: 18px;
-  grid-auto-flow: dense;
-  margin-bottom: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 40px 0;
 }
 
 
-/* =========================================================
-   TAMANHOS DOS ITEMS
-   ========================================================= */
+/* Item base */
 
 .gallery-item {
   position: relative;
-  min-width: 0;
   overflow: hidden;
-  border-radius: 3px;
-  background-color: rgba(245, 245, 245, 0.04);
+  background-color: rgba(245, 245, 245, 0.03);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 0;
 }
 
 
-/* Pequeno */
-
-.gallery-item.size-small {
-  grid-column: span 3;
-  grid-row: span 3;
-}
-
-
-/* Médio */
-
-.gallery-item.size-medium {
-  grid-column: span 4;
-  grid-row: span 4;
-}
-
-
-/* Grande */
-
-.gallery-item.size-large {
-  grid-column: span 6;
-  grid-row: span 5;
-}
-
-
-/* Extra grande */
-
-.gallery-item.size-xlarge {
-  grid-column: span 8;
-  grid-row: span 5;
+.gallery-item:hover {
+  background-color: rgba(245, 245, 245, 0.05);
+  border-color: rgba(245, 245, 245, 0.2);
+  transform: scale(1.02);
 }
 
 
 /* =========================================================
-   FOTOS
+   TAMANHOS
+   ========================================================= */
+
+.gallery-item.size-small {
+  grid-column: span 1;
+  grid-row: span 1;
+  aspect-ratio: 1 / 1;
+}
+
+
+.gallery-item.size-medium {
+  grid-column: span 1;
+  grid-row: span 1;
+  aspect-ratio: 4 / 5;
+}
+
+
+.gallery-item.size-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+
+/* =========================================================
+   FOTOGRAFIAS
    ========================================================= */
 
 .photo-item {
-  cursor: pointer;
+  position: relative;
 }
 
 
@@ -1136,7 +1108,7 @@ footer::before {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 
@@ -1148,10 +1120,10 @@ footer::before {
 .photo-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.42);
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1173,7 +1145,6 @@ footer::before {
    ========================================================= */
 
 .video-item {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -1193,7 +1164,7 @@ footer::before {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 
@@ -1207,21 +1178,20 @@ footer::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 58px;
-  height: 58px;
-  background: rgba(0, 0, 0, 0.55);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.55);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 
 .video-item:hover .video-play-icon {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -1234,15 +1204,17 @@ footer::before {
 
 .video-info-card {
   flex-shrink: 0;
-  padding: 12px 2px 2px;
+  padding: 12px;
+  background-color: rgba(245, 245, 245, 0.02);
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
 }
 
 
 .video-title {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 1px;
-  color: #f5f5f5;
+  text-transform: uppercase;
   margin: 0 0 6px;
 }
 
@@ -1259,12 +1231,12 @@ footer::before {
   font-size: 0.7rem;
   font-weight: 300;
   opacity: 0.5;
-  margin: 3px 0 0;
+  margin: 4px 0 0;
 }
 
 
 /* =========================================================
-   LIGHTBOX PARA FOTOS
+   LIGHTBOX
    ========================================================= */
 
 .lightbox {
@@ -1410,8 +1382,20 @@ footer::before {
    ANIMAÇÕES
    ========================================================= */
 
-@keyframes zoomIn {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes zoomIn {
   from {
     transform: scale(0.9);
     opacity: 0;
@@ -1421,12 +1405,10 @@ footer::before {
     transform: scale(1);
     opacity: 1;
   }
-
 }
 
 
 @keyframes slideUp {
-
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -1436,51 +1418,44 @@ footer::before {
     transform: translateY(0);
     opacity: 1;
   }
-
 }
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE - 900px
    ========================================================= */
 
 @media (max-width: 900px) {
 
   .gallery-masonry {
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 65px;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
 
   .gallery-item.size-small {
-    grid-column: span 2;
-    grid-row: span 3;
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
 
   .gallery-item.size-medium {
-    grid-column: span 3;
-    grid-row: span 4;
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
 
   .gallery-item.size-large {
-    grid-column: span 4;
-    grid-row: span 5;
-  }
-
-
-  .gallery-item.size-xlarge {
-    grid-column: span 6;
-    grid-row: span 5;
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
   }
 
 }
 
 
 /* =========================================================
-   MOBILE - 768px
+   RESPONSIVE - 768px
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -1527,9 +1502,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     MEMBROS
-     ======================================================= */
+  /* Membros */
 
   .members-grid {
     display: none;
@@ -1554,9 +1527,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     SOBRE
-     ======================================================= */
+  /* Sobre */
 
   .about-container {
     flex-direction: column;
@@ -1570,9 +1541,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     TIMELINE
-     ======================================================= */
+  /* Timeline */
 
   .timeline::before {
     left: 20px;
@@ -1594,9 +1563,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     EVENTOS PASSADOS
-     ======================================================= */
+  /* Eventos */
 
   .cards-grid {
     grid-template-columns: 1fr;
@@ -1608,9 +1575,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     JANELA FLUTUANTE
-     ======================================================= */
+  /* Janela flutuante */
 
   .floating-concert {
     bottom: 15px;
@@ -1662,9 +1627,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     CONTACTOS
-     ======================================================= */
+  /* Contactos */
 
   .contact-top {
     grid-template-columns: 1fr;
@@ -1678,44 +1641,37 @@ footer::before {
   }
 
 
-  /* =======================================================
-     GALERIA
-     ======================================================= */
+  /* Galeria */
 
   .gallery-masonry {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 130px;
+    grid-template-columns: 2fr 1fr;
     gap: 12px;
+    padding: 25px 0 60px;
   }
 
 
   .gallery-item.size-small {
     grid-column: span 1;
-    grid-row: span 2;
+    grid-row: span 1;
+    aspect-ratio: 1 / 1;
   }
 
 
   .gallery-item.size-medium {
     grid-column: span 1;
-    grid-row: span 3;
+    grid-row: span 1;
+    aspect-ratio: 4 / 5;
   }
 
 
   .gallery-item.size-large {
     grid-column: span 2;
-    grid-row: span 3;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
   }
 
 
-  .gallery-item.size-xlarge {
-    grid-column: span 2;
-    grid-row: span 4;
-  }
-
-
-  /* =======================================================
-     LIGHTBOX
-     ======================================================= */
+  /* Lightbox */
 
   .lightbox-close {
     top: 20px;
@@ -1737,9 +1693,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     YOUTUBE
-     ======================================================= */
+  /* YouTube */
 
   .youtube-modal {
     padding: 20px;
@@ -1755,14 +1709,10 @@ footer::before {
 
 
 /* =========================================================
-   MOBILE PEQUENO - 480px
+   RESPONSIVE - 480px
    ========================================================= */
 
 @media (max-width: 480px) {
-
-  /* =======================================================
-     NAVBAR
-     ======================================================= */
 
   .navbar {
     padding: 15px 20px;
@@ -1774,38 +1724,36 @@ footer::before {
   }
 
 
-  /* =======================================================
-     GALERIA
-     ======================================================= */
+  /* Galeria */
 
   .gallery-masonry {
     grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
     gap: 15px;
+    padding: 20px 0 50px;
   }
 
 
   .gallery-item.size-small,
   .gallery-item.size-medium,
-  .gallery-item.size-large,
-  .gallery-item.size-xlarge {
+  .gallery-item.size-large {
     grid-column: span 1;
     grid-row: span 1;
+    aspect-ratio: 4 / 3;
   }
 
 
   .video-item {
-    min-height: 260px;
+    min-height: 280px;
   }
 
 
   .video-info-card {
-    padding: 10px 0;
+    padding: 10px;
   }
 
 
   .video-title {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
 
@@ -1814,19 +1762,7 @@ footer::before {
   }
 
 
-  /* =======================================================
-     LIGHTBOX
-     ======================================================= */
-
-  .lightbox-image {
-    max-width: 95%;
-    max-height: 80%;
-  }
-
-
-  /* =======================================================
-     JANELA FLUTUANTE
-     ======================================================= */
+  /* Janela flutuante */
 
   .floating-concert {
     max-width: 210px;
@@ -1835,8 +1771,6 @@ footer::before {
     right: 12px;
   }
 
-
-  /* Esconde informação menos importante */
 
   .floating-concert-time,
   .floating-concert-location {
@@ -1872,6 +1806,14 @@ footer::before {
   .floating-concert-link {
     font-size: 0.6rem;
     padding: 6px 10px;
+  }
+
+
+  /* Lightbox */
+
+  .lightbox-image {
+    max-width: 95%;
+    max-height: 80%;
   }
 
 }
