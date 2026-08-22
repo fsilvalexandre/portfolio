@@ -125,7 +125,7 @@ body {
 /* Conteúdo geral das páginas internas */
 .page-content {
   padding: 140px 40px 80px;
-  -width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -755,7 +755,6 @@ footer::before {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .page-content {
     padding: 140px 20px 60px;
@@ -794,6 +793,26 @@ footer::before {
 
   .members-grid {
     grid-template-columns: 1fr;
+  }
+
+    /* Mostrar versão mobile de membros */
+  .members-grid {
+    display: none;
+  }
+
+  .members-mobile {
+    display: block;
+  }
+
+  .members-tabs {
+    gap: 10px;
+  }
+
+  .member-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 80px;
   }
 
   .about-container {
@@ -841,25 +860,6 @@ footer::before {
   .floating-concert-date {
     font-size: 1.5rem;
   }
-  .members-grid {
-    display: none;
-  }
-
-  .members-mobile {
-    display: block;
-  }
-
-  .members-tabs {
-    gap: 10px;
-  }
-
-  .member-btn {
-    padding: 10px 20px;
-    font-size: 0.8rem;
-    flex: 1;
-    min-width: 80px;
-  }
-  
 }
 /* Contactos */
 .contact-section {
