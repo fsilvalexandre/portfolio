@@ -1,7 +1,7 @@
 // Carrega eventos do JSON
 async function carregarEventos() {
     try {
-        const response = await fetch('./data/eventos.json');
+        const response = await fetch(`./data/eventos.json?t=${Date.now()}`);
         return await response.json();
     } catch (error) {
         console.error('Erro ao carregar eventos:', error);
