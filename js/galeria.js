@@ -40,7 +40,7 @@ const photos = [
         thumb: 'imagens/galeria/foto5.jpg',
         full: 'imagens/galeria/foto5.jpg',
         alt: 'RePercussion Trio - Decoder',
-        size: 'large'
+        size: 'small'
     },
 
           {
