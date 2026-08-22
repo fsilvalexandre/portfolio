@@ -103,6 +103,7 @@ body {
   opacity: 0.6;
 }
 
+
 /* =========================================================
    MENU HAMBURGER - MOBILE
    ========================================================= */
@@ -166,6 +167,9 @@ body {
 .mobile-menu-content {
   padding: 40px 20px;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 140px);
 }
 
 .language-switcher {
@@ -183,6 +187,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+  flex: 1;
 }
 
 .mobile-nav-links li {
@@ -205,6 +210,32 @@ body {
   opacity: 0.6;
   background-color: rgba(245, 245, 245, 0.05);
 }
+
+/* =========================================================
+   MOBILE SOCIALS - FOOTER DO MENU
+   ========================================================= */
+
+.mobile-socials {
+  display: none;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
+  flex-shrink: 0;
+}
+
+.mobile-socials a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-socials a:hover {
+  opacity: 0.6;
+}
+
 
 @keyframes fadeIn {
   from {
@@ -888,6 +919,7 @@ input[type="radio"][name="event-tabs"] {
   border: 1px solid rgba(245, 245, 245, 0.3);
   padding: 10px 20px;
   transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 
@@ -1087,6 +1119,8 @@ footer::before {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 
@@ -1544,18 +1578,15 @@ footer::before {
     gap: 15px;
   }
 
-
   .gallery-item.size-small {
     grid-column: span 1;
     grid-row: span 1;
   }
 
-
   .gallery-item.size-medium {
     grid-column: span 1;
     grid-row: span 1;
   }
-
 
   .gallery-item.size-large {
     grid-column: span 2;
@@ -1567,25 +1598,52 @@ footer::before {
 
 
 /* =========================================================
-   RESPONSIVE - 768px
+   RESPONSIVE - 768px (MOBILE)
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  /* Mostrar hamburger em mobile */
+  /* ===== NAVBAR MOBILE ===== */
+  .navbar {
+    padding: 15px 20px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  /* Mostrar hamburger centrado à direita */
   .hamburger {
     display: flex;
+    order: 3;
   }
 
   /* Esconder nav links desktop */
   .nav-links {
     display: none;
   }
-   
+
+  /* Esconder socials da navbar (vão para o menu mobile) */
+  .socials {
+    display: none;
+  }
+
+  /* Mostrar socials no menu mobile */
+  .mobile-socials {
+    display: flex;
+  }
+
+
+  /* ===== PAGE CONTENT ===== */
   .page-content {
     padding: 140px 20px 60px;
   }
-
 
   .page-title {
     font-size: 1.5rem;
@@ -1593,53 +1651,43 @@ footer::before {
     margin-bottom: 40px;
   }
 
-
   .work-meta {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 8px;
   }
 
-
   .composer {
     min-width: auto;
   }
-
 
   .year {
     text-align: left;
     min-width: auto;
   }
 
-
   .work {
     flex-direction: column;
     padding: 18px 0;
   }
-
 
   .commision-note {
     font-size: 0.7rem;
     margin-bottom: 20px;
   }
 
-
-  /* Membros */
-
+  /* ===== MEMBROS ===== */
   .members-grid {
     display: none;
   }
-
 
   .members-mobile {
     display: block;
   }
 
-
   .members-tabs {
     gap: 10px;
   }
-
 
   .member-btn {
     padding: 10px 20px;
@@ -1648,32 +1696,25 @@ footer::before {
     min-width: 80px;
   }
 
-
-  /* Sobre */
-
+  /* ===== SOBRE ===== */
   .about-container {
     flex-direction: column;
     gap: 30px;
   }
-
 
   .about-img,
   .about-text {
     width: 100%;
   }
 
-
-  /* Timeline */
-
+  /* ===== TIMELINE ===== */
   .timeline::before {
     left: 20px;
   }
 
-
   .timeline-item::before {
     left: 20px;
   }
-
 
   .timeline-item:nth-child(odd) .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
@@ -1684,21 +1725,16 @@ footer::before {
     text-align: left;
   }
 
-
-  /* Eventos */
-
+  /* ===== EVENTOS ===== */
   .cards-grid {
     grid-template-columns: 1fr;
   }
-
 
   .event-card {
     flex-direction: column;
   }
 
-
-  /* Janela flutuante */
-
+  /* ===== FLOATING CONCERT ===== */
   .floating-concert {
     bottom: 15px;
     right: 15px;
@@ -1708,32 +1744,27 @@ footer::before {
     padding: 15px;
   }
 
-
   .floating-concert-label {
     font-size: 0.6rem;
     letter-spacing: 1.5px;
     margin-bottom: 8px;
   }
 
-
   .floating-concert-date {
     font-size: 1.4rem;
     margin-bottom: 5px;
   }
-
 
   .floating-concert-month {
     font-size: 0.7rem;
     margin-bottom: 10px;
   }
 
-
   .floating-concert-title {
     font-size: 0.8rem;
     line-height: 1.4;
     margin-bottom: 8px;
   }
-
 
   .floating-concert-time,
   .floating-concert-location {
@@ -1742,35 +1773,28 @@ footer::before {
     margin-bottom: 5px;
   }
 
-
   .floating-concert-link {
     font-size: 0.65rem;
     padding: 7px 12px;
   }
 
-
-  /* Contactos */
-
+  /* ===== CONTACTOS ===== */
   .contact-top {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-
 
   .socials-links {
     flex-direction: column;
     gap: 30px;
   }
 
-
-  /* Galeria */
-
+  /* ===== GALERIA ===== */
   .gallery-masonry {
     grid-template-columns: 2fr 1fr;
     gap: 12px;
     padding: 25px 0 60px;
   }
-
 
   .gallery-item.size-small {
     grid-column: span 1;
@@ -1778,13 +1802,11 @@ footer::before {
     aspect-ratio: 1 / 1;
   }
 
-
   .gallery-item.size-medium {
     grid-column: span 1;
     grid-row: span 1;
     aspect-ratio: 4 / 5;
   }
-
 
   .gallery-item.size-large {
     grid-column: span 2;
@@ -1792,20 +1814,16 @@ footer::before {
     aspect-ratio: 16 / 9;
   }
 
-
-  /* Lightbox */
-
+  /* ===== LIGHTBOX ===== */
   .lightbox-close {
     top: 20px;
     right: 20px;
     font-size: 1.8rem;
   }
 
-
   .lightbox-nav {
     bottom: 20px;
   }
-
 
   .lightbox-prev,
   .lightbox-next {
@@ -1814,13 +1832,10 @@ footer::before {
     font-size: 1.2rem;
   }
 
-
-  /* YouTube */
-
+  /* ===== YOUTUBE ===== */
   .youtube-modal {
     padding: 20px;
   }
-
 
   .youtube-close {
     top: -35px;
@@ -1831,7 +1846,7 @@ footer::before {
 
 
 /* =========================================================
-   RESPONSIVE - 480px
+   RESPONSIVE - 480px (MOBILE PEQUENO)
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -1840,20 +1855,16 @@ footer::before {
     padding: 15px 20px;
   }
 
-
   .logo img {
     height: 60px;
   }
 
-
-  /* Galeria */
-
+  /* ===== GALERIA ===== */
   .gallery-masonry {
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 20px 0 50px;
   }
-
 
   .gallery-item.size-small,
   .gallery-item.size-medium,
@@ -1863,29 +1874,23 @@ footer::before {
     aspect-ratio: 4 / 3;
   }
 
-
   .video-item {
     min-height: 280px;
   }
-
 
   .video-info-card {
     padding: 10px;
   }
 
-
   .video-title {
     font-size: 0.75rem;
   }
-
 
   .video-meta {
     font-size: 0.7rem;
   }
 
-
-  /* Janela flutuante */
-
+  /* ===== FLOATING CONCERT ===== */
   .floating-concert {
     max-width: 210px;
     padding: 13px;
@@ -1893,30 +1898,25 @@ footer::before {
     right: 12px;
   }
 
-
   .floating-concert-time,
   .floating-concert-location {
     display: none;
   }
-
 
   .floating-concert-label {
     font-size: 0.55rem;
     margin-bottom: 6px;
   }
 
-
   .floating-concert-date {
     font-size: 1.2rem;
     margin-bottom: 4px;
   }
 
-
   .floating-concert-month {
     font-size: 0.65rem;
     margin-bottom: 8px;
   }
-
 
   .floating-concert-title {
     font-size: 0.75rem;
@@ -1924,15 +1924,12 @@ footer::before {
     margin-bottom: 8px;
   }
 
-
   .floating-concert-link {
     font-size: 0.6rem;
     padding: 6px 10px;
   }
 
-
-  /* Lightbox */
-
+  /* ===== LIGHTBOX ===== */
   .lightbox-image {
     max-width: 95%;
     max-height: 80%;
