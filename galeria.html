@@ -48,96 +48,34 @@
 <div class="page-content">
 <h1 class="page-title">Galeria</h1>
 
-<div class="gallery">
-
-<!-- VIDEO 1 - Grande -->
-<div class="gallery-item video large">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/EwRCXJEFdnM" frameborder="0" allowfullscreen></iframe>
-<p class="video-title">BK - Maria Vittoria Agresti</p>
-</div>
-
-<!-- FOTO 1 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto1.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 2 - Grande -->
-<div class="gallery-item photo large">
-<img src="imagens/galeria/foto2.jpg" alt="Galeria">
-</div>
-
-<!-- VIDEO 2 -->
-<div class="gallery-item video">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NGF_QhZKx_s" frameborder="0" allowfullscreen></iframe>
-<p class="video-title">Musique de Table - Thierry de Mey</p>
-</div>
-
-<!-- FOTO 3 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto3.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 4 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto4.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 5 - Grande -->
-<div class="gallery-item photo large">
-<img src="imagens/galeria/foto5.jpg" alt="Galeria">
-</div>
-
-<!-- VIDEO 3 - Grande -->
-<div class="gallery-item video large">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ixwtmh-hVBk" frameborder="0" allowfullscreen></iframe>
-<p class="video-title">Psychedelic Industrial - Carlos Guedes</p>
-</div>
-
-<!-- FOTO 6 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto6.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 7 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto7.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 8 - Grande -->
-<div class="gallery-item photo large">
-<img src="imagens/galeria/foto8.jpg" alt="Galeria">
-</div>
-
-<!-- FOTO 9 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto9.jpg" alt="Galeria">
-</div>
-
-<!-- VIDEO 4 -->
-<div class="gallery-item video">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/-1yYJOTor2Y" frameborder="0" allowfullscreen></iframe>
-<p class="video-title">VUOI CHE NEL FUORI - Marco Momi</p>
-</div>
-
-<!-- FOTO 10 -->
-<div class="gallery-item photo">
-<img src="imagens/galeria/foto10.jpg" alt="Galeria">
-</div>
-
+<!-- Masonry Gallery -->
+<div class="gallery-masonry" id="gallery-masonry">
+<!-- Items loaded by galeria.js -->
 </div>
 
 </div>
 
 </main>
 
-<!-- Lightbox -->
+<!-- Lightbox Modal para Fotos -->
 <div class="lightbox" id="lightbox">
 <span class="lightbox-close">&times;</span>
-<img class="lightbox-content" src="" alt="Galeria">
+<img class="lightbox-image" id="lightbox-image" src="" alt="">
+<div class="lightbox-nav">
+  <button class="lightbox-prev" id="lightbox-prev">‹</button>
+  <button class="lightbox-next" id="lightbox-next">›</button>
+</div>
+</div>
+
+<!-- YouTube Modal para Vídeos -->
+<div class="youtube-modal" id="youtube-modal">
+<span class="youtube-close">&times;</span>
+<div class="youtube-container">
+  <iframe id="youtube-iframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </div>
 
 <script src="js/galeria.js"></script>
 
 </body>
 </html>
-
