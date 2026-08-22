@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/estilo.css">
 </head>
-
 <body>
-
 <header>
 <nav class="navbar">
 <a href="index.html" class="logo">
@@ -21,76 +18,25 @@
 </a>
 
 <ul class="nav-links">
-<li><a href="index.html">Página Inicial</a></li>
-<li><a href="sobre.html">Sobre Nós</a></li>
-<li><a href="repertorio.html">Repertório</a></li>
-<li><a href="galeria.html">Galeria</a></li>
-<li><a href="agenda.html">Agenda</a></li>
-<li><a href="contactos.html" class="active">Contactos</a></li>
+<li><a href="index.html" data-translate="navbar.home">Página Inicial</a></li>
+<li><a href="sobre.html" data-translate="navbar.about">Sobre Nós</a></li>
+<li><a href="repertorio.html" data-translate="navbar.repertoire">Repertório</a></li>
+<li><a href="galeria.html" data-translate="navbar.gallery">Galeria</a></li>
+<li><a href="agenda.html" data-translate="navbar.agenda">Agenda</a></li>
+<li><a href="contactos.html" class="active" data-translate="navbar.contact">Contactos</a></li>
 </ul>
 
+<!-- Language Selector - Desktop -->
+<div class="language-selector">
+  <button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+  <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+</div>
+
+<button class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 <div class="socials">
-<a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
-<a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
-<i class="fab fa-youtube"></i>
-</a>
-</div>
-</nav>
-</header>
-
-<main>
-
-<div class="page-content">
-<h1 class="page-title">Contactos</h1>
-
-<div class="contact-section">
-
-<div class="contact-top">
-<div class="contact-email">
-<h2 class="section-title">Email</h2>
-<p><a href="mailto:repercussiontrio@gmail.com">repercussiontrio@gmail.com</a></p>
-</div>
-
-<div class="press-photos-section">
-<h2 class="section-title">Fotografias</h2>
-<p class="press-description">Download de fotografias para divulgação de imprensa</p>
-<a href="presskit/press-kit.zip" class="download-button" download>
-<i class="fas fa-download"></i>
-Download
-</a>
-</div>
-</div>
-
-<div class="socials-section">
-<h2 class="section-title">Redes Sociais</h2>
-<div class="socials-links">
-<a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
-<i class="fab fa-facebook-f"></i>
-<span>Facebook</span>
-</a>
-<a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
-<i class="fab fa-instagram"></i>
-<span>Instagram</span>
-</a>
-<a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
-<i class="fab fa-youtube"></i>
-<span>YouTube</span>
-</a>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</main>
-
-<script src="js/menu.js"></script>
-  
-</body>
-</html>
+<a href="https://facebook.com/repercussiontrio" target="
