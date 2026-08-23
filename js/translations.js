@@ -1,118 +1,238 @@
-// ==========================================
+// =========================================================
 // SISTEMA DE TRADUÇÃO
-// ==========================================
+// =========================================================
 
 let currentLanguage = localStorage.getItem('language') || 'pt';
+
 let translations = {};
 
-// ==========================================
+
+// =========================================================
 // CARREGAR TRADUÇÕES
-// ==========================================
+// =========================================================
 
 async function loadTranslations() {
-  try {
-    const response = await fetch(`./data/translations.json?t=${Date.now()}`);
 
-    if (!response.ok) {
-      throw new Error(`Erro HTTP: ${response.status}`);
+    try {
+
+        const response = await fetch(
+            `./data/translations.json?t=${Date.now()}`
+        );
+
+        if (!response.ok) {
+            throw new Error(`Erro HTTP ${response.status}`);
+        }
+
+        translations = await response.json();
+
+        console.log('Traduções carregadas:', translations);
+
+        // Atualizar idioma do HTML
+        document.documentElement.lang = currentLanguage;
+
+        applyTranslations();
+
+        updateLanguageSelector();
+
+    } catch (error) {
+
+        console.error(
+            'Erro ao carregar traduções:',
+            error
+        );
+
     }
 
-    translations = await response.json();
-
-    applyTranslations();
-    updateLanguageSelector();
-
-  } catch (error) {
-    console.error('Erro ao carregar traduções:', error);
-  }
 }
 
-// ==========================================
-// OBTER TRADUÇÃO
-// ==========================================
 
-function t(key) {
-  const [section, ...keyParts] = key.split('.');
-  const finalKey = keyParts.join('.');
-
-  return (
-    translations?.[section]?.[currentLanguage]?.[finalKey] ??
-    key
-  );
-}
-
-// ==========================================
-// APLICAR TRADUÇÕES NA PÁGINA
-// ==========================================
+// =========================================================
+// APLICAR TRADUÇÕES
+// =========================================================
 
 function applyTranslations() {
-  document.querySelectorAll('[data-translate]').forEach(element => {
-    const key = element.getAttribute('data-translate');
-    const text = t(key);
 
-    if (text === key) return;
+    document
+        .querySelectorAll('[data-translate]')
+        .forEach(element => {
 
-    // Placeholder de inputs
-    if (element.hasAttribute('data-translate-placeholder')) {
-      element.placeholder = text;
-      return;
-    }
+            const key =
+                element.getAttribute('data-translate');
 
-    // Value de inputs/buttons
-    if (
-      element.tagName === 'INPUT' ||
-      element.tagName === 'BUTTON'
-    ) {
-      element.value = text;
-      return;
-    }
+            const [section, ...keyParts] =
+                key.split('.');
 
-    // Texto normal
-    element.textContent = text;
-  });
+            const finalKey =
+                keyParts.join('.');
+
+
+            if (
+                translations[section] &&
+                translations[section][currentLanguage] &&
+                translations[section][currentLanguage][finalKey]
+            ) {
+
+                const text =
+                    translations[section]
+                        [currentLanguage]
+                        [finalKey];
+
+
+                // Links
+                if (element.tagName === 'A') {
+
+                    element.textContent = text;
+
+                }
+
+
+                // Inputs e botões
+                else if (
+                    element.tagName === 'INPUT' ||
+                    element.tagName === 'BUTTON'
+                ) {
+
+                    element.value = text;
+
+                }
+
+
+                // Elementos normais
+                else {
+
+                    element.textContent = text;
+
+                }
+
+            }
+
+        });
+
 }
 
-// ==========================================
+
+// =========================================================
 // MUDAR IDIOMA
-// ==========================================
+// =========================================================
 
 function changeLanguage(lang) {
-  if (!['pt', 'en'].includes(lang)) {
-    return;
-  }
 
-  currentLanguage = lang;
-  localStorage.setItem('language', lang);
+    if (
+        lang !== 'pt' &&
+        lang !== 'en'
+    ) {
+        return;
+    }
 
-  applyTranslations();
-  updateLanguageSelector();
 
-  // Permite que outros scripts reajam à mudança
-  document.dispatchEvent(
-    new CustomEvent('languageChanged', {
-      detail: { language: currentLanguage }
-    })
-  );
+    currentLanguage = lang;
+
+    localStorage.setItem(
+        'language',
+        lang
+    );
+
+
+    // Atualizar atributo HTML
+    document.documentElement.lang =
+        currentLanguage;
+
+
+    // Atualizar textos da página
+    applyTranslations();
+
+
+    // Atualizar botões PT / EN
+    updateLanguageSelector();
+
+
+    // Avisar outros scripts
+    // (Agenda, concerto flutuante, etc.)
+    document.dispatchEvent(
+        new CustomEvent('languageChanged', {
+            detail: {
+                language: currentLanguage
+            }
+        })
+    );
+
 }
 
-// ==========================================
+
+// =========================================================
 // ATUALIZAR SELETOR DE IDIOMA
-// ==========================================
+// =========================================================
 
 function updateLanguageSelector() {
-  document.querySelectorAll('.language-btn').forEach(button => {
-    const isActive =
-      button.getAttribute('data-lang') === currentLanguage;
 
-    button.classList.toggle('active', isActive);
-    button.setAttribute('aria-pressed', isActive);
-  });
+    document
+        .querySelectorAll('.language-btn')
+        .forEach(button => {
+
+            const buttonLanguage =
+                button.getAttribute('data-lang');
+
+
+            button.classList.toggle(
+                'active',
+                buttonLanguage === currentLanguage
+            );
+
+
+            button.setAttribute(
+                'aria-pressed',
+                buttonLanguage === currentLanguage
+                    ? 'true'
+                    : 'false'
+            );
+
+        });
+
 }
 
-// ==========================================
-// INICIALIZAÇÃO
-// ==========================================
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadTranslations();
-});
+// =========================================================
+// FUNÇÃO t()
+// =========================================================
+
+function t(key) {
+
+    const [section, ...keyParts] =
+        key.split('.');
+
+    const finalKey =
+        keyParts.join('.');
+
+
+    if (
+        translations[section] &&
+        translations[section][currentLanguage] &&
+        translations[section][currentLanguage][finalKey]
+    ) {
+
+        return translations[section]
+            [currentLanguage]
+            [finalKey];
+
+    }
+
+
+    // Se não encontrar tradução,
+    // devolve a própria chave
+    return key;
+
+}
+
+
+// =========================================================
+// INICIALIZAÇÃO
+// =========================================================
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        loadTranslations();
+
+    }
+);
