@@ -474,6 +474,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.member-btn');
   const memberDetail = document.getElementById('member-detail');
 
+  if (!memberDetail) {
+    return;
+  }
+
   let currentMember = 0;
 
 
@@ -493,11 +497,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return '';
     }
 
-    return key.split('.').reduce(function (obj, part) {
+    const [section, ...keyParts] = key.split('.');
+    const finalKey = keyParts.join('.');
 
-      return obj ? obj[part] : null;
+    if (
+      !translations[section] ||
+      !translations[section][lang]
+    ) {
+      return '';
+    }
 
-    }, translations[lang]) || '';
+    return translations[section][lang][finalKey] || '';
 
   }
 
