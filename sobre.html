@@ -7,243 +7,609 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
   <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
 <header>
-<nav class="navbar">
-<a href="index.html" class="logo">
-<img src="imagens/logotipo.png" alt="RePercussion Trio">
-</a>
+  <nav class="navbar">
 
-<ul class="nav-links">
-<li><a href="index.html" data-translate="navbar.home">Página Inicial</a></li>
-<li><a href="sobre.html" class="active" data-translate="navbar.about">Sobre Nós</a></li>
-<li><a href="repertorio.html" data-translate="navbar.repertoire">Repertório</a></li>
-<li><a href="galeria.html" data-translate="navbar.gallery">Galeria</a></li>
-<li><a href="agenda.html" data-translate="navbar.agenda">Agenda</a></li>
-<li><a href="contactos.html" data-translate="navbar.contact">Contactos</a></li>
-</ul>
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <img src="imagens/logotipo.png" alt="RePercussion Trio">
+    </a>
 
-<!-- Language Selector - Desktop -->
-<div class="language-selector">
-  <button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
-  <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
-</div>
+    <!-- NAVEGAÇÃO DESKTOP -->
+    <ul class="nav-links">
+      <li>
+        <a href="index.html" data-translate="navbar.home">
+          Página Inicial
+        </a>
+      </li>
 
-<button class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+      <li>
+        <a href="sobre.html" class="active" data-translate="navbar.about">
+          Sobre Nós
+        </a>
+      </li>
 
-<div class="socials">
-<a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
-<a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
-<i class="fab fa-youtube"></i>
-</a>
-</div>
-</nav>
+      <li>
+        <a href="repertorio.html" data-translate="navbar.repertoire">
+          Repertório
+        </a>
+      </li>
 
-<!-- Menu Mobile Overlay -->
-<div class="mobile-menu" id="mobile-menu">
-  <div class="mobile-menu-content">
-    <!-- Language Selector - Mobile -->
-    <div class="mobile-language-selector">
-      <button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
-      <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
-    </div>
+      <li>
+        <a href="galeria.html" data-translate="navbar.gallery">
+          Galeria
+        </a>
+      </li>
 
-    <!-- Links de navegação -->
-    <ul class="mobile-nav-links">
-      <li><a href="index.html" data-translate="navbar.home">Página Inicial</a></li>
-      <li><a href="sobre.html" data-translate="navbar.about">Sobre Nós</a></li>
-      <li><a href="repertorio.html" data-translate="navbar.repertoire">Repertório</a></li>
-      <li><a href="galeria.html" data-translate="navbar.gallery">Galeria</a></li>
-      <li><a href="agenda.html" data-translate="navbar.agenda">Agenda</a></li>
-      <li><a href="contactos.html" data-translate="navbar.contact">Contactos</a></li>
+      <li>
+        <a href="agenda.html" data-translate="navbar.agenda">
+          Agenda
+        </a>
+      </li>
+
+      <li>
+        <a href="contactos.html" data-translate="navbar.contact">
+          Contactos
+        </a>
+      </li>
     </ul>
 
-    <!-- Socials no rodapé -->
-    <div class="mobile-socials">
-      <a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
+    <!-- SELETOR DE IDIOMA DESKTOP -->
+    <div class="language-selector">
+      <button
+        class="language-btn active"
+        data-lang="pt"
+        onclick="changeLanguage('pt')"
+      >
+        PT
+      </button>
+
+      <button
+        class="language-btn"
+        data-lang="en"
+        onclick="changeLanguage('en')"
+      >
+        EN
+      </button>
+    </div>
+
+    <!-- HAMBURGER -->
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Abrir menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- REDES SOCIAIS DESKTOP -->
+    <div class="socials">
+
+      <a
+        href="https://facebook.com/repercussiontrio"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
+
+      <a
+        href="https://instagram.com/repercussiontrio"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
+
+      <a
+        href="https://youtube.com/@repercussiontrio"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+      >
         <i class="fab fa-youtube"></i>
       </a>
+
+    </div>
+
+  </nav>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu" id="mobile-menu">
+
+    <div class="mobile-menu-content">
+
+      <!-- IDIOMA MOBILE -->
+      <div class="mobile-language-selector">
+
+        <button
+          class="language-btn active"
+          data-lang="pt"
+          onclick="changeLanguage('pt')"
+        >
+          PT
+        </button>
+
+        <button
+          class="language-btn"
+          data-lang="en"
+          onclick="changeLanguage('en')"
+        >
+          EN
+        </button>
+
+      </div>
+
+      <!-- LINKS MOBILE -->
+      <ul class="mobile-nav-links">
+
+        <li>
+          <a href="index.html" data-translate="navbar.home">
+            Página Inicial
+          </a>
+        </li>
+
+        <li>
+          <a href="sobre.html" data-translate="navbar.about">
+            Sobre Nós
+          </a>
+        </li>
+
+        <li>
+          <a href="repertorio.html" data-translate="navbar.repertoire">
+            Repertório
+          </a>
+        </li>
+
+        <li>
+          <a href="galeria.html" data-translate="navbar.gallery">
+            Galeria
+          </a>
+        </li>
+
+        <li>
+          <a href="agenda.html" data-translate="navbar.agenda">
+            Agenda
+          </a>
+        </li>
+
+        <li>
+          <a href="contactos.html" data-translate="navbar.contact">
+            Contactos
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- REDES SOCIAIS MOBILE -->
+      <div class="mobile-socials">
+
+        <a
+          href="https://facebook.com/repercussiontrio"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a
+          href="https://instagram.com/repercussiontrio"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://youtube.com/@repercussiontrio"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+
+      </div>
+
     </div>
   </div>
-</div>
+
 </header>
 
+
+<!-- CONTEÚDO PRINCIPAL -->
 <main class="page-content">
-<h1 class="page-title" data-translate="about.pageTitle">Sobre Nós</h1>
 
-<!-- 1. Sobre a banda -->
-<section class="about-container">
-<img src="imagens/foto-trio.jpg" alt="RePercussion Trio" class="about-img">
-<div class="about-text">
-<p data-translate="about.groupDescription">RePercussion Trio é um grupo de percussão, criado em 2016, composto por Alexandre Silva, Daniel Araújo e Jorge Pereira. O grupo foca a sua actividade na criação e divulgação da música contemporânea, experimental e performativa para trio de percussão pela colaboração com compositores. Já participou em festivais como o Cistermúsica, Festival Internacional de Música da Póvoa de Varzim e Harmos Festival. A sua princiapal área de atividade tem sido em países como Portugal e Suíça.</p>
-</div>
-</section>
+  <!-- TÍTULO -->
+  <h1
+    class="page-title"
+    data-translate="about.pageTitle"
+  >
+    Sobre Nós
+  </h1>
 
-<!-- 2. Membros -->
-<section class="members-section">
-<h2 class="section-title" data-translate="about.membersTitle">Membros</h2>
 
-<!-- DESKTOP: Grid de 3 -->
-<div class="members-grid">
-<div class="member-card">
-<img src="imagens/membro1.png" alt="Alexandre Silva" class="member-img">
-<h3 data-translate="about.memberAlexandre">Alexandre Silva</h3>
-<p>Alexandre Ferreira Silva (n. 1997) é um percussionista e performer profundamente dedicado ao desenvolvimento da música contemporânea. Tem sido reconhecido em vários concursos de prestígio. De salientar o 2º Prémio no Concours Nicati 2023, um 3º lugar no Prémio Jovens Músicos 2019 para Percussão em Portugal, o prémio Helena Sá e Costa 2020, e um notável 1º prémio para Snare Drum no "Festival Internacional Tomarimbando" 2017.
+  <!-- SOBRE O GRUPO -->
+  <section class="about-container">
 
-Com um portfólio diversificado de experiências, Alexandre tem colaborado e participado com vários festivais e grupos musicais de renome, como o Donaueschinger Musiktage, Darmstädter Ferienkurse, Drumming GP, Orquestra de Câmara Portuguesa, Basel Sinfonieorchester, Dresden Festival Orchestra e Neue Philharmonie München e é também reforço da Orquestra Filarmonia das Beiras. Na temporada 2014/2015 foi selecionado para integrar a Orquestra Portuguesa de Jovens (JOP).
+    <img
+      src="imagens/foto-trio.jpg"
+      alt="RePercussion Trio"
+      class="about-img"
+    >
 
-Alexandre tem mestrado em performance sob a orientação de Christian Dierstein e um mestrado em Música Contemporânea e Pedagogia na Musik-Akademie Basel. Antes dos seus estudos em Basileia, Alexandre licenciou-se na Escola Superior de Música e Artes do Espetáculo (ESMAE) no Porto, com Miquel Bernat e Manuel Campos.</p>
-</div>
+    <div class="about-text">
 
-<div class="member-card">
-<img src="imagens/membro2.jpg" alt="Daniel Araújo" class="member-img">
-<h3 data-translate="about.memberDaniel">Daniel Araújo</h3>
-<p>Daniel Fernando Oliveira Araújo (n.1996), é percussionista formado na Escola Superior de Música e Artes do Espetáculo (ESMAE), tendo obtido o grau de Mestre em Ensino de Música em 2021 após ter concluído a licenciatura em Percussão em 2019 na mesma instituição.
-Dos vários agrupamentos com quem já colaborou destacam-se a Orquestra Sinfónica do Porto - Casa da Música, Drumming Grupo de Percussão e Banda Sinfónica Portuguesa. Entre 2020 e 2021 integrou a orquestra do circo do Coliseu do Porto AGEAS.
+      <p data-translate="about.groupDescription">
+        RePercussion Trio é um grupo de percussão, criado em 2016,
+        composto por Alexandre Silva, Daniel Araújo e Jorge Pereira.
+        O grupo foca a sua actividade na criação e divulgação da música
+        contemporânea, experimental e performativa para trio de percussão
+        pela colaboração com compositores. Já participou em festivais como
+        o Cistermúsica, Festival Internacional de Música da Póvoa de Varzim
+        e Harmos Festival. A sua principal área de atividade tem sido em
+        países como Portugal e Suíça.
+      </p>
 
-Em concursos alcançou os seguintes prémios: Vencedor do prémio Helena Sá e Costa em duo com o percussionista Jorge Pereira (2019);
-3º lugar em "Concurso Internacional de Percussão – Gondomar" (2018);
-Prémio Scherzo Editions – Melhor interpretação da obra obrigatória da compositora residente Ângela da Ponte no "Concurso Internacional de Percussão – Gondomar" (2018);
-2° lugar em "Italy Percussive Arts Society - Snare Drum Competition" Cat. B (2017);
-3º lugar em "Tomarimbando – Snare Drum competiton" Cat. B (2016).
+    </div>
 
-Apresenta-se nos seguintes registos discográficos:
-Peixinho Patriarca Percussão, Drumming GP, 2021;
-Night & Day, Banda Sinfónica Portuguesa, 2020;
-The Ghost Ship, Banda Sinfónica Portuguesa, 2018
+  </section>
 
-Atualmente, é professor de percussão na Academia de Música de Oliveira de Azeméis.</p>
-</div>
 
-<div class="member-card">
-<img src="imagens/membro3.jpg" alt="Jorge Pereira" class="member-img">
-<h3 data-translate="about.memberJorge">Jorge Pereira</h3>
-<p>Jorge Pereira (n.1998) realizou a sua formação em percussão na Escola Superior de Música e Artes do Espetáculo (ESMAE), onde obteve o grau de Mestre em ensino de música no ano de 2022, depois de concluir a licenciatura na mesma instituição em 2020, sob orientação dos professores Manuel Campos e Miquel Bernat.
+  <!-- MEMBROS -->
+  <section class="members-section">
 
-Iniciou o seu percurso musical na Filarmónica Severense em 2007 e concluiu em 2016 o Curso Profissional de Instrumentista de Sopros e Percussão no Conservatório de Música da Jobra.
-Ao longo das suas participações em concursos, foi vencedor em 2019 do Prémio Helena Sá e Costa em Duo, com o percussionista Daniel Araújo e conquistou o 3o lugar no XIII International Competition Paços Premium 2019, Percussion Competition.
+    <h2
+      class="section-title"
+      data-translate="about.membersTitle"
+    >
+      Membros
+    </h2>
 
-Enquanto intérprete destaca-se as colaborações com o Drumming GP, Banda Sinfónica Portuguesa, Orquestra Filarmonia das Beiras, MUDA'TE e Foco Musical.
-Atualmente é professor de percussão no Conservatório de Música da Jobra.</p>
-</div>
-</div>
 
-<!-- MOBILE: 3 Botões + Membro Selecionado -->
-<div class="members-mobile">
-<div class="members-tabs">
-<button class="member-btn active" data-member="0">Alexandre</button>
-<button class="member-btn" data-member="1">Daniel</button>
-<button class="member-btn" data-member="2">Jorge</button>
-</div>
+    <!-- DESKTOP -->
+    <div class="members-grid">
 
-<div class="member-detail" id="member-detail">
-<!-- Conteúdo inserido por JS -->
-</div>
-</div>
+      <!-- ALEXANDRE -->
+      <div class="member-card">
 
-</section>
+        <img
+          src="imagens/membro1.png"
+          alt="Alexandre Silva"
+          class="member-img"
+        >
 
-<!-- 3. Prémios -->
-<section class="awards-section">
-<h2 class="section-title" data-translate="about.awardsTitle">Prémios</h2>
+        <h3 data-translate="about.memberAlexandre">
+          Alexandre Silva
+        </h3>
 
-<ul class="awards-list">
-<li><span class="award-year">2025</span> 1º Prémio, Re_Crea@, FestMUS</li>
-<li><span class="award-year">2021</span> Prémio Jovens Intérpretes no Festival Internacional de Música da Póvoa de Varzim (FIMPV)</li>
-<li><span class="award-year">2017</span> Prémio melhor espetáculo no Festival SET, atribuído pelo público</li>
-<li><span class="award-year">2027</span> 2º lugar, Categoria Júnior, CIMCA – Concurso Internacional de Música de Câmara da Cidade de Alcobaça</li>
-<li><span class="award-year">2017</span> Melhor interpretação de obra portuguesa, Categoria Júnior</li>
-</ul>
-</section>
+        <p data-translate="about.bioAlexandre"></p>
+
+      </div>
+
+
+      <!-- DANIEL -->
+      <div class="member-card">
+
+        <img
+          src="imagens/membro2.jpg"
+          alt="Daniel Araújo"
+          class="member-img"
+        >
+
+        <h3 data-translate="about.memberDaniel">
+          Daniel Araújo
+        </h3>
+
+        <p data-translate="about.bioDaniel"></p>
+
+      </div>
+
+
+      <!-- JORGE -->
+      <div class="member-card">
+
+        <img
+          src="imagens/membro3.jpg"
+          alt="Jorge Pereira"
+          class="member-img"
+        >
+
+        <h3 data-translate="about.memberJorge">
+          Jorge Pereira
+        </h3>
+
+        <p data-translate="about.bioJorge"></p>
+
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE -->
+    <div class="members-mobile">
+
+      <div class="members-tabs">
+
+        <button
+          class="member-btn active"
+          data-member="0"
+          role="tab"
+          aria-selected="true"
+        >
+          Alexandre
+        </button>
+
+        <button
+          class="member-btn"
+          data-member="1"
+          role="tab"
+          aria-selected="false"
+        >
+          Daniel
+        </button>
+
+        <button
+          class="member-btn"
+          data-member="2"
+          role="tab"
+          aria-selected="false"
+        >
+          Jorge
+        </button>
+
+      </div>
+
+
+      <div
+        class="member-detail"
+        id="member-detail"
+      >
+        <!-- Conteúdo inserido por JavaScript -->
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRÉMIOS -->
+  <section class="awards-section">
+
+    <h2
+      class="section-title"
+      data-translate="about.awardsTitle"
+    >
+      Prémios
+    </h2>
+
+    <ul class="awards-list">
+
+      <li>
+        <span class="award-year">2025</span>
+        1º Prémio, Re_Crea@, FestMUS
+      </li>
+
+      <li>
+        <span class="award-year">2021</span>
+        Prémio Jovens Intérpretes no Festival Internacional
+        de Música da Póvoa de Varzim (FIMPV)
+      </li>
+
+      <li>
+        <span class="award-year">2017</span>
+        Prémio melhor espetáculo no Festival SET,
+        atribuído pelo público
+      </li>
+
+      <li>
+        <span class="award-year">2017</span>
+        2.º lugar, Categoria Júnior, CIMCA –
+        Concurso Internacional de Música de Câmara da Cidade de Alcobaça
+      </li>
+
+      <li>
+        <span class="award-year">2017</span>
+        Melhor interpretação de obra portuguesa,
+        Categoria Júnior
+      </li>
+
+    </ul>
+
+  </section>
+
 </main>
 
+
+<!-- JAVASCRIPT DOS MEMBROS -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const memberData = [
+document.addEventListener('DOMContentLoaded', function () {
+
+  const members = [
     {
-      name: 'Alexandre Silva',
+      nameKey: 'about.memberAlexandre',
+      bioKey: 'about.bioAlexandre',
       img: 'imagens/membro1.png',
-      alt: 'Alexandre Silva',
-      bio: 'Alexandre Ferreira Silva (n. 1997) é um percussionista e performer profundamente dedicado ao desenvolvimento da música contemporânea. Tem sido reconhecido em vários concursos de prestígio. De salientar o 2º Prémio no Concours Nicati 2023, um 3º lugar no Prémio Jovens Músicos 2019 para Percussão em Portugal, o prémio Helena Sá e Costa 2020, e um notável 1º prémio para Snare Drum no "Festival Internacional Tomarimbando" 2017.\n\nCom um portfólio diversificado de experiências, Alexandre tem colaborado e participado com vários festivais e grupos musicais de renome, como o Donaueschinger Musiktage, Darmstädter Ferienkurse, Drumming GP, Orquestra de Câmara Portuguesa, Basel Sinfonieorchester, Dresden Festival Orchestra e Neue Philharmonie München e é também reforço da Orquestra Filarmonia das Beiras. Na temporada 2014/2015 foi selecionado para integrar a Orquestra Portuguesa de Jovens (JOP).\n\nAlexandre tem mestrado em performance sob a orientação de Christian Dierstein e um mestrado em Música Contemporânea e Pedagogia na Musik-Akademie Basel. Antes dos seus estudos em Basileia, Alexandre licenciou-se na Escola Superior de Música e Artes do Espetáculo (ESMAE) no Porto, com Miquel Bernat e Manuel Campos.'
+      alt: 'Alexandre Silva'
     },
     {
-      name: 'Daniel Araújo',
+      nameKey: 'about.memberDaniel',
+      bioKey: 'about.bioDaniel',
       img: 'imagens/membro2.jpg',
-      alt: 'Daniel Araújo',
-      bio: 'Daniel Fernando Oliveira Araújo (n.1996), é percussionista formado na Escola Superior de Música e Artes do Espetáculo (ESMAE), tendo obtido o grau de Mestre em Ensino de Música em 2021 após ter concluído a licenciatura em Percussão em 2019 na mesma instituição.\nDos vários agrupamentos com quem já colaborou destacam-se a Orquestra Sinfónica do Porto - Casa da Música, Drumming Grupo de Percussão e Banda Sinfónica Portuguesa. Entre 2020 e 2021 integrou a orquestra do circo do Coliseu do Porto AGEAS.\n\nEm concursos alcançou os seguintes prémios: Vencedor do prémio Helena Sá e Costa em duo com o percussionista Jorge Pereira (2019);\n3º lugar em "Concurso Internacional de Percussão – Gondomar" (2018);\nPrémio Scherzo Editions – Melhor interpretação da obra obrigatória da compositora residente Ângela da Ponte no "Concurso Internacional de Percussão – Gondomar" (2018);\n2° lugar em "Italy Percussive Arts Society - Snare Drum Competition" Cat. B (2017);\n3º lugar em "Tomarimbando – Snare Drum competiton" Cat. B (2016).\n\nApresenta-se nos seguintes registos discográficos:\nPeixinho Patriarca Percussão, Drumming GP, 2021;\nNight & Day, Banda Sinfónica Portuguesa, 2020;\nThe Ghost Ship, Banda Sinfónica Portuguesa, 2018\n\nAtualmente, é professor de percussão na Academia de Música de Oliveira de Azeméis.'
+      alt: 'Daniel Araújo'
     },
     {
-      name: 'Jorge Pereira',
+      nameKey: 'about.memberJorge',
+      bioKey: 'about.bioJorge',
       img: 'imagens/membro3.jpg',
-      alt: 'Jorge Pereira',
-      bio: 'Jorge Pereira (n.1998) realizou a sua formação em percussão na Escola Superior de Música e Artes do Espetáculo (ESMAE), onde obteve o grau de Mestre em ensino de música no ano de 2022, depois de concluir a licenciatura na mesma instituição em 2020, sob orientação dos professores Manuel Campos e Miquel Bernat.\n\nIniciou o seu percurso musical na Filarmónica Severense em 2007 e concluiu em 2016 o Curso Profissional de Instrumentista de Sopros e Percussão no Conservatório de Música da Jobra.\nAo longo das suas participações em concursos, foi vencedor em 2019 do Prémio Helena Sá e Costa em Duo, com o percussionista Daniel Araújo e conquistou o 3o lugar no XIII International Competition Paços Premium 2019, Percussion Competition.\n\nEnquanto intérprete destaca-se as colaborações com o Drumming GP, Banda Sinfónica Portuguesa, Orquestra Filarmonia das Beiras, MUDA\'TE e Foco Musical.\nAtualmente é professor de percussão no Conservatório de Música da Jobra.'
+      alt: 'Jorge Pereira'
     }
   ];
 
+
   const buttons = document.querySelectorAll('.member-btn');
   const memberDetail = document.getElementById('member-detail');
-  let currentMember = null;
+
+  let currentMember = 0;
+
+
+  function getLanguage() {
+
+    return localStorage.getItem('language') || 'pt';
+
+  }
+
+
+  function getText(key, lang) {
+
+    if (
+      typeof translations === 'undefined' ||
+      !translations[lang]
+    ) {
+      return '';
+    }
+
+    return key.split('.').reduce(function (obj, part) {
+
+      return obj ? obj[part] : null;
+
+    }, translations[lang]) || '';
+
+  }
+
 
   function showMember(index) {
-    const member = memberData[index];
-    const paragraphs = member.bio.split('\n\n').map(p => `<p>${p}</p>`).join('');
-    
+
+    const member = members[index];
+    const lang = getLanguage();
+
+    const name = getText(member.nameKey, lang);
+    const bio = getText(member.bioKey, lang);
+
+    const paragraphs = bio
+      .split(/\n\s*\n/)
+      .filter(Boolean)
+      .map(function (paragraph) {
+        return `<p>${paragraph}</p>`;
+      })
+      .join('');
+
+
     memberDetail.innerHTML = `
-      <img src="${member.img}" alt="${member.alt}">
-      <h3>${member.name}</h3>
+      <img
+        src="${member.img}"
+        alt="${member.alt}"
+      >
+
+      <h3>${name}</h3>
+
       ${paragraphs}
     `;
 
-    buttons.forEach((btn, i) => {
-      btn.classList.toggle('active', i === index);
+
+    buttons.forEach(function (button, i) {
+
+      const isActive = i === index;
+
+      button.classList.toggle(
+        'active',
+        isActive
+      );
+
+      button.setAttribute(
+        'aria-selected',
+        isActive ? 'true' : 'false'
+      );
+
     });
+
 
     currentMember = index;
+
   }
 
-  function hideMember() {
-    memberDetail.innerHTML = '';
-    buttons.forEach((btn) => {
-      btn.classList.remove('active');
-    });
-    currentMember = null;
-  }
 
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const index = parseInt(btn.dataset.member);
+  buttons.forEach(function (button) {
+
+    button.addEventListener('click', function () {
+
+      const index = parseInt(
+        this.dataset.member,
+        10
+      );
+
       if (currentMember === index) {
-        hideMember();
-      } else {
+
+        /*
+         * Mantém o membro visível quando se
+         * clica novamente no botão.
+         */
         showMember(index);
+
+      } else {
+
+        showMember(index);
+
       }
+
     });
+
   });
+
+
+  /*
+   * Mostra Alexandre inicialmente no mobile.
+   */
+  showMember(0);
+
+
+  /*
+   * Permite ao translations.js atualizar
+   * o membro selecionado depois da mudança
+   * de idioma.
+   */
+  window.updateMemberLanguage = function () {
+
+    if (currentMember !== null) {
+      showMember(currentMember);
+    }
+
+  };
+
 });
 </script>
 
+
+<!-- TRADUÇÕES -->
 <script src="js/translations.js"></script>
+
+<!-- MENU -->
 <script src="js/menu.js"></script>
+
 
 </body>
 </html>
