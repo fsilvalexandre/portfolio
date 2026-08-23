@@ -1,32 +1,65 @@
 [
     {
         "day": "04",
-        "month": "Set",
-        "title": "Intermitências",
+        "month": {
+            "pt": "Set",
+            "en": "Sep"
+        },
+        "title": {
+            "pt": "Intermitências",
+            "en": "Intermitências"
+        },
         "time": "21:30",
-        "location": "Auditório Municipal Sá de Miranda, Viana do Castelo",
-        "description": "Obras de: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
+        "location": {
+            "pt": "Auditório Municipal Sá de Miranda, Viana do Castelo",
+            "en": "Sá de Miranda Municipal Auditorium, Viana do Castelo"
+        },
+        "description": {
+            "pt": "Obras de: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
+            "en": "Works by: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial"
+        },
         "date": "2026-09-04"
     },
-
-    
-        {
+    {
         "day": "13",
-        "month": "Fev",
-        "title": "Festmus - reCREA",
+        "month": {
+            "pt": "Fev",
+            "en": "Feb"
+        },
+        "title": {
+            "pt": "Festmus - reCREA",
+            "en": "Festmus - reCREA"
+        },
         "time": "19:30",
-        "location": "Auditori i Palau de Congressos de Castelló",
-        "description": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], , Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]",
+        "location": {
+            "pt": "Auditori i Palau de Congressos de Castelló",
+            "en": "Auditori i Palau de Congressos de Castelló"
+        },
+        "description": {
+            "pt": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]",
+            "en": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]"
+        },
         "date": "2026-02-13"
     },
-        {
+    {
         "day": "08",
-        "month": "Dez",
-        "title": "Metatempo - Festival DME",
+        "month": {
+            "pt": "Dez",
+            "en": "Dec"
+        },
+        "title": {
+            "pt": "Metatempo - Festival DME",
+            "en": "Metatempo - DME Festival"
+        },
         "time": "19:30",
-        "location": "Auditório de Seia",
-        "description": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan",
+        "location": {
+            "pt": "Auditório de Seia",
+            "en": "Seia Municipal Auditorium"
+        },
+        "description": {
+            "pt": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan",
+            "en": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira and Maurizio Azzan"
+        },
         "date": "2025-12-08"
     }
-    
 ]
