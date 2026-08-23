@@ -833,6 +833,7 @@ input[type="radio"][name="event-tabs"] {
    ========================================================= */
 
 .floating-concert {
+  display: none;
   position: fixed;
   bottom: 40px;
   right: 40px;
