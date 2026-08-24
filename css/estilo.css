@@ -43,8 +43,18 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background-color: #0d0d0d;
-  backdrop-filter: blur(8px);
+
+  /* Seamless integration with the hero image */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.18) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
   position: fixed;
   top: 0;
   left: 0;
