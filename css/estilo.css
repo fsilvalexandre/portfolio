@@ -1037,76 +1037,81 @@ footer::before {
    CONTACTOS
    ========================================================= */
 
+* =========================================================
+   CONTACTOS - CORRIGIDO PARA CENTRAR
+   ========================================================= */
+ 
 .contact-section {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
 }
-
-
+ 
 .contact-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  max-width: 1000px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   align-items: center;
+  justify-items: center;
 }
-
-
+ 
 .contact-email {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-
-
+ 
 .contact-email h2 {
   order: 1;
 }
-
-
+ 
 .contact-email p {
   font-size: 1.2rem;
   font-weight: 300;
   margin-top: 20px;
   order: 2;
 }
-
-
+ 
 .contact-email a {
   color: #f5f5f5;
   text-decoration: none;
   border-bottom: 1px dashed rgba(245, 245, 245, 0.3);
   transition: border-color 0.3s ease;
 }
-
-
+ 
 .contact-email a:hover {
   border-bottom-color: rgba(245, 245, 245, 0.6);
 }
-
-
+ 
 .press-photos-section {
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
+ 
 .press-photos-section h2 {
   text-align: center;
 }
-
-
+ 
 .press-description {
   font-size: 0.95rem;
   font-weight: 300;
   opacity: 0.8;
   margin-top: 20px;
   margin-bottom: 30px;
+  max-width: 400px;
 }
-
-
+ 
 .download-button {
   display: inline-block;
   margin-top: 20px;
@@ -1122,38 +1127,35 @@ footer::before {
   border-radius: 2px;
   cursor: pointer;
 }
-
-
+ 
 .download-button:hover {
   background-color: rgba(245, 245, 245, 0.1);
   border-color: rgba(245, 245, 245, 0.6);
 }
-
-
+ 
 .download-button i {
   margin-right: 10px;
 }
-
-
+ 
 .socials-section {
   text-align: center;
-  max-width: 1000px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
+ 
 .socials-links {
   display: flex;
   justify-content: center;
   gap: 50px;
   margin-top: 30px;
   width: 100%;
+  flex-wrap: wrap;
 }
-
-
+ 
 .socials-links a {
   display: flex;
   flex-direction: column;
@@ -1167,13 +1169,11 @@ footer::before {
   text-transform: uppercase;
   transition: opacity 0.3s ease;
 }
-
-
+ 
 .socials-links a:hover {
   opacity: 0.6;
 }
-
-
+ 
 .socials-links i {
   font-size: 2rem;
   color: #f5f5f5;
