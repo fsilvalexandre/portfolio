@@ -1,5 +1,5 @@
 /* =========================================================
-   RESET BÁSICO
+   RESET BÃSICO
    ========================================================= */
 
 * {
@@ -21,7 +21,7 @@ body {
 
 
 /* =========================================================
-   CABEÇALHO / MENU DE NAVEGAÇÃO
+   CABEÃ‡ALHO / MENU DE NAVEGAÃ‡ÃƒO
    ========================================================= */
 
 .navbar {
@@ -151,11 +151,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(13, 13, 13, 0.98);
   backdrop-filter: blur(8px);
   z-index: 99;
-  padding-top: 140px;
+  padding-top: 120px;
   overflow-y: auto;
 }
 
@@ -165,11 +165,11 @@ body {
 }
 
 .mobile-menu-content {
-  padding: 40px 20px;
+  padding: 30px 20px 60px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 120px);
 }
 
 .language-switcher {
@@ -179,7 +179,6 @@ body {
   margin-bottom: 50px;
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(245, 245, 245, 0.1);
-  /* Preparado para barras de idioma */
 }
 
 .mobile-nav-links {
@@ -294,7 +293,7 @@ body {
 
 
 /* =========================================================
-   CONTEÚDO GERAL DAS PÁGINAS
+   CONTEÃšDO GERAL DAS PÃGINAS
    ========================================================= */
 
 .page-content {
@@ -360,7 +359,7 @@ body {
 
 
 /* =========================================================
-   SECÇÃO SOBRE
+   SECÃ‡ÃƒO SOBRE
    ========================================================= */
 
 .about-container {
@@ -385,7 +384,7 @@ body {
 
 
 /* =========================================================
-   SECÇÃO MEMBROS
+   SECÃ‡ÃƒO MEMBROS
    ========================================================= */
 
 .members-grid {
@@ -427,7 +426,7 @@ body {
 
 
 /* =========================================================
-   SECÇÃO PRÉMIOS
+   SECÃ‡ÃƒO PRÃ‰MIOS
    ========================================================= */
 
 .awards-list {
@@ -453,7 +452,7 @@ body {
 
 
 /* =========================================================
-   REPERTÓRIO
+   REPERTÃ“RIO
    ========================================================= */
 
 .repertoire-grid {
@@ -612,7 +611,7 @@ input[type="radio"][name="event-tabs"] {
 
 
 /* =========================================================
-   TIMELINE - PRÓXIMOS EVENTOS
+   TIMELINE - PRÃ“XIMOS EVENTOS
    ========================================================= */
 
 .timeline {
@@ -829,11 +828,10 @@ input[type="radio"][name="event-tabs"] {
 
 
 /* =========================================================
-   JANELA FLUTUANTE - PRÓXIMO CONCERTO
+   JANELA FLUTUANTE - PRÃ“XIMO CONCERTO
    ========================================================= */
 
 .floating-concert {
-  display: none;
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -1288,7 +1286,7 @@ footer::before {
 
 
 /* =========================================================
-   VÍDEOS
+   VÃDEOS
    ========================================================= */
 
 .video-item {
@@ -1526,7 +1524,7 @@ footer::before {
 
 
 /* =========================================================
-   ANIMAÇÕES
+   ANIMAÃ‡Ã•ES
    ========================================================= */
 
 @keyframes fadeInUp {
@@ -1603,20 +1601,14 @@ footer::before {
 }
 
 /* Mobile - Language selector no menu */
-@media (max-width: 768px) {
-  .language-selector {
-    display: none;
-  }
-
-  .mobile-language-selector {
-    display: flex;
-  }
-}
-
 .mobile-language-selector {
   display: none;
   gap: 12px;
   justify-content: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.05);
+  border-radius: 2px;
 }
 
 .mobile-language-selector .language-btn {
@@ -1663,30 +1655,35 @@ footer::before {
 
   /* ===== NAVBAR MOBILE ===== */
   .navbar {
-    padding: 15px 20px;
-    justify-content: space-between;
+    padding: 12px 15px;
+    justify-content: center;
     position: relative;
+    height: 70px;
   }
 
   .logo {
     position: absolute;
-    left: 20px;
+    left: 12px;
   }
 
   .logo img {
-    height: 60px;
+    height: 50px;
   }
 
   /* Hamburger CENTRADO */
   .hamburger {
     display: flex;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 15px;
   }
 
   /* Esconder nav links desktop */
   .nav-links {
+    display: none;
+  }
+
+  /* Esconder language selector desktop */
+  .language-selector {
     display: none;
   }
 
@@ -1700,9 +1697,24 @@ footer::before {
     display: flex;
   }
 
+  /* Mostrar language selector mobile */
+  .mobile-language-selector {
+    display: flex;
+  }
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu {
+    padding-top: 100px;
+  }
+
+  .mobile-menu-content {
+    padding: 20px 15px 50px;
+    min-height: calc(100vh - 100px);
+  }
+
   /* ===== PAGE CONTENT ===== */
   .page-content {
-    padding: 140px 20px 60px;
+    padding: 100px 20px 60px;
   }
 
   .page-title {
@@ -1912,11 +1924,12 @@ footer::before {
 @media (max-width: 480px) {
 
   .navbar {
-    padding: 15px 20px;
+    padding: 12px 15px;
+    height: 70px;
   }
 
   .logo img {
-    height: 60px;
+    height: 50px;
   }
 
   /* ===== GALERIA ===== */
