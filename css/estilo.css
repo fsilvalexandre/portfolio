@@ -1322,132 +1322,223 @@ footer::before {
 /* ===== RESPONSIVE 768px ===== */
 
 @media (max-width: 768px) {
+.navbar {
+  padding: 10px 15px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.42) 0%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
 
-  /* =====================================================
-     MOBILE HERO
-     ===================================================== */
-
-  .hero {
-    width: 100%;
-    height: 100svh;
-    min-height: 100svh;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-
-  /* =====================================================
-     MOBILE NAVBAR
-     ===================================================== */
-
-  .navbar {
+  .logo {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 76px;
-    padding: 8px 15px;
-
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.18) 55%,
-      rgba(0, 0, 0, 0) 100%
-    );
-
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-
-    z-index: 100;
+    left: 12px;
   }
 
-
-  /* =====================================================
-     LOGO
-     ===================================================== */
-
-  .logo img {
-    height: 58px;
-    width: auto;
-  }
-
-
-  /* =====================================================
-     HAMBURGER
-     ===================================================== */
+  .logo img { height: 50px; }
 
   .hamburger {
-    padding: 8px;
+    display: flex;
+    position: absolute;
+    right: 15px;
   }
 
-  .hamburger span {
-    width: 24px;
-    height: 1.5px;
+  .nav-links,
+  .language-selector,
+  .socials {
+    display: none;
   }
 
-
-  /* =====================================================
-     MOBILE LANGUAGE SELECTOR
-     ===================================================== */
-
+  .mobile-socials,
   .mobile-language-selector {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-
-    margin-bottom: 24px;
-    padding: 0;
-
-    background: transparent;
-    border-radius: 0;
   }
 
-  .mobile-language-selector .language-btn {
-    flex: 0 0 auto;
+  .mobile-menu { padding-top: 100px; }
 
-    padding: 5px 9px;
-
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    line-height: 1;
-
-    border: 1px solid transparent;
-    background: transparent;
-
-    opacity: 0.65;
+  .mobile-menu-content {
+    padding: 20px 15px 50px;
+    min-height: calc(100vh - 100px);
   }
 
-  .mobile-language-selector .language-btn.active {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.25);
-    opacity: 1;
+  .page-content { padding: 100px 20px 60px; }
+
+  .page-title {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
   }
 
-  .mobile-language-selector .language-btn:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.18);
+  .work-meta {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 
+  .composer,
+  .year {
+    min-width: auto;
+  }
 
-  /* =====================================================
-     MOBILE MENU
-     ===================================================== */
+  .year { text-align: left; }
 
-  .mobile-menu {
-    background-color: rgba(13, 13, 13, 0.88);
+  .work {
+    flex-direction: column;
+    padding: 18px 0;
+  }
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+  .commision-note {
+    font-size: .7rem;
+    margin-bottom: 20px;
+  }
+
+  .members-grid { display: none; }
+  .members-mobile { display: block; }
+
+  .members-tabs { gap: 10px; }
+
+  .member-btn {
+    padding: 10px 20px;
+    font-size: .8rem;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-img,
+  .about-text {
+    width: 100%;
+  }
+
+  .timeline::before,
+  .timeline-item::before {
+    left: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+  }
+
+  .cards-grid { grid-template-columns: 1fr; }
+
+  .event-card { flex-direction: column; }
+
+  .floating-concert {
+    bottom: 15px;
+    right: 15px;
+    left: auto;
+    width: auto;
+    max-width: 240px;
+    padding: 15px;
+  }
+
+  .floating-concert-label {
+    font-size: .6rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .floating-concert-date {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+
+  .floating-concert-month {
+    font-size: .7rem;
+    margin-bottom: 10px;
+  }
+
+  .floating-concert-title {
+    font-size: .8rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .floating-concert-time,
+  .floating-concert-location {
+    font-size: .7rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+
+  .floating-concert-link {
+    font-size: .65rem;
+    padding: 7px 12px;
+  }
+
+  .contact-top {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .socials-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .gallery-masonry {
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+    padding: 25px 0 60px;
+  }
+
+  .gallery-item.size-small {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-item.size-medium {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-item.size-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+  }
+
+  .lightbox-nav { bottom: 20px; }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .youtube-modal { padding: 20px; }
+
+  .youtube-close {
+    top: -35px;
+    font-size: 1.8rem;
   }
 }
 
