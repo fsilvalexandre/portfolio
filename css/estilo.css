@@ -172,15 +172,19 @@ body {
   flex-direction: column;
   min-height: calc(100vh - 120px);
 }
-
+  
 .language-switcher {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 50px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--white-10);
-}
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    font-weight: 400;
+  }
+
+  .language-switcher a {
+    padding: 3px 4px;
+  }
 
 .mobile-nav-links {
   list-style: none;
