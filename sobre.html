@@ -446,6 +446,7 @@
 
 
 <!-- JAVASCRIPT DOS MEMBROS -->
+<!-- JAVASCRIPT DOS MEMBROS -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -470,28 +471,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   ];
 
-
   const buttons = document.querySelectorAll('.member-btn');
   const memberDetail = document.getElementById('member-detail');
 
-  if (!memberDetail) {
+  if (!memberDetail || !buttons.length) {
     return;
   }
 
   let currentMember = 0;
 
-
   function getLanguage() {
-
     return localStorage.getItem('language') || 'pt';
-
   }
 
-
   function getText(key, lang) {
-
     if (
       typeof translations === 'undefined' ||
+      !translations ||
       !translations[lang]
     ) {
       return '';
@@ -508,13 +504,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     return translations[section][lang][finalKey] || '';
-
   }
 
-
   function showMember(index) {
-
     const member = members[index];
+
+    if (!member) {
+      return;
+    }
+
     const lang = getLanguage();
 
     const name = getText(member.nameKey, lang);
@@ -528,87 +526,63 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .join('');
 
-
     memberDetail.innerHTML = `
       <img
         src="${member.img}"
         alt="${member.alt}"
       >
 
-      <h3>${name}</h3>
+      <h3>${name || member.alt}</h3>
 
       ${paragraphs}
     `;
 
-
     buttons.forEach(function (button, i) {
-
       const isActive = i === index;
 
-      button.classList.toggle(
-        'active',
-        isActive
-      );
-
+      button.classList.toggle('active', isActive);
       button.setAttribute(
         'aria-selected',
         isActive ? 'true' : 'false'
       );
-
     });
 
-
     currentMember = index;
-
   }
 
-
+  // BOTÕES DOS MEMBROS
   buttons.forEach(function (button) {
 
     button.addEventListener('click', function () {
 
-      const index = parseInt(
-        this.dataset.member,
-        10
-      );
+      const index = Number(this.dataset.member);
 
-      if (currentMember === index) {
-
-        /*
-         * Mantém o membro visível quando se
-         * clica novamente no botão.
-         */
+      if (
+        Number.isInteger(index) &&
+        index >= 0 &&
+        index < members.length
+      ) {
         showMember(index);
-
-      } else {
-
-        showMember(index);
-
       }
 
     });
 
   });
 
+  /*
+   * Atualiza o membro quando as traduções
+   * terminam de carregar ou quando o idioma muda.
+   */
+  document.addEventListener('languageChanged', function () {
+    showMember(currentMember);
+  });
 
   /*
-   * Mostra Alexandre inicialmente no mobile.
+   * Mostra Alexandre inicialmente.
+   * Se as traduções ainda não tiverem carregado,
+   * languageChanged irá atualizar o conteúdo depois.
    */
   showMember(0);
-
-
-  /*
-   * Permite ao translations.js atualizar
-   * o membro selecionado depois da mudança
-   * de idioma.
-   */
-  window.updateMemberLanguage = function () {
-
-    if (currentMember !== null) {
-      showMember(currentMember);
-    }
-
-  };
 
 });
 </script>
