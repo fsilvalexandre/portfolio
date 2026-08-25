@@ -149,9 +149,6 @@ Object.keys(passadosPorAno).sort((a, b) => b - a).forEach(ano => {
   header.textContent = ano;
   passadosCardsGrid.appendChild(header);
   
-  passadosPorAno[ano].forEach(item => {
-    passadosCardsGrid.appendChild(item.elemento);
-  });
 });
 
         // Limpar conteúdo
