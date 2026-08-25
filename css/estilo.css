@@ -418,10 +418,11 @@ background: rgba(13, 13, 13, 0.5);
 }
 
 .member-btn {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 12px 30px;
+  font-size: .9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .member-btn:hover,
@@ -738,6 +739,18 @@ input[type="radio"][name="event-tabs"] { display: none; }
   font-weight: 300;
   line-height: 1.6;
   opacity: .75;
+}
+
+.timeline-year-header {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  border-bottom: 1px solid var(--white-10);
+  padding-bottom: 10px;
 }
 
 /* ===== EVENTOS PASSADOS ===== */
@@ -1625,3 +1638,4 @@ footer::before {
     max-height: 80%;
   }
 }
+
