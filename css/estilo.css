@@ -752,7 +752,7 @@ input[type="radio"][name="event-tabs"] { display: none; }
 /* ===== EVENTOS PASSADOS ===== */
 
 .cards-grid {
-  display: grid;
+  display: block;
   grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
   gap: 30px;
 }
@@ -761,6 +761,26 @@ input[type="radio"][name="event-tabs"] { display: none; }
   display: flex;
   gap: 30px;
   padding: 30px;
+}
+
+.event-list-item {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--white-10);
+  display: block;
+}
+
+.event-list-item:last-child {
+  border-bottom: none;
+}
+
+.event-list-item .event-date-badge {
+  display: inline-block;
+  margin-right: 20px;
+  min-width: auto;
+}
+
+.event-list-item .event-title {
+  display: inline;
 }
 
 .event-card .event-date-badge {
