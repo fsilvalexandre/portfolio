@@ -57,11 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
     currentMember = index;
   }
 
-  buttons.forEach(button => {
+buttons.forEach(button => {
     button.addEventListener('click', function () {
       const index = Number(this.dataset.member);
       if (Number.isInteger(index) && index >= 0 && index < members.length) {
-        showMember(index);
+        // Se já está ativo, esconde
+        if (this.classList.contains('active')) {
+          memberDetail.innerHTML = '';
+          this.classList.remove('active');
+          this.setAttribute('aria-selected', 'false');
+        } else {
+          showMember(index);
+        }
       }
     });
   });
