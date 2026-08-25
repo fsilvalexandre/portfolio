@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getText(key, lang) {
-    if (!translations || !translations[lang]) return '';
+    if (!translations) return '';
     const [section, ...keyParts] = key.split('.');
     const finalKey = keyParts.join('.');
     if (!translations[section] || !translations[section][lang]) return '';
