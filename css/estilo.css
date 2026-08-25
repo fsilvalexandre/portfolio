@@ -52,8 +52,9 @@ body {
     rgba(0, 0, 0, 0) 100%
   );
 
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+background: rgba(13, 13, 13, 0.5);
 
   position: fixed;
   top: 0;
