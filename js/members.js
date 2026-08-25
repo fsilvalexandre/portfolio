@@ -74,5 +74,4 @@ buttons.forEach(button => {
   });
 
   document.addEventListener('languageChanged', () => showMember(currentMember));
-  showMember(0);
 });
