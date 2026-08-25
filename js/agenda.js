@@ -109,27 +109,50 @@ async function organizarEventos() {
     // MOSTRAR PRÓXIMOS
     // =====================================================
 
-    proximos.forEach(item => {
-        proximosTimeline.appendChild(item.elemento);
-    });
+// AGRUPAR POR ANO
+const proximosPorAno = {};
+proximos.forEach(item => {
+  const ano = new Date(item.data).getFullYear();
+  if (!proximosPorAno[ano]) proximosPorAno[ano] = [];
+  proximosPorAno[ano].push(item);
+});
+
+// MOSTRAR COM HEADERS DE ANO
+Object.keys(proximosPorAno).sort().forEach(ano => {
+  const header = document.createElement('div');
+  header.className = 'timeline-year-header';
+  header.textContent = ano;
+  proximosTimeline.appendChild(header);
+  
+  proximosPorAno[ano].forEach(item => {
+    proximosTimeline.appendChild(item.elemento);
+  });
+});
 
 
     // =====================================================
     // MOSTRAR PASSADOS
     // =====================================================
 
-    passados.forEach(item => {
+// AGRUPAR POR ANO
+const passadosPorAno = {};
+passados.forEach(item => {
+  const ano = new Date(item.data).getFullYear();
+  if (!passadosPorAno[ano]) passadosPorAno[ano] = [];
+  passadosPorAno[ano].push(item);
+});
 
-        const card = item.elemento;
-
-        card.classList.add('event-card');
-
-        const badge = card.querySelector('.event-date-badge');
-        const title = card.querySelector('.event-title');
-        const time = card.querySelector('.event-time');
-        const location = card.querySelector('.event-location');
-        const description = card.querySelector('.event-description');
-
+// MOSTRAR COM HEADERS DE ANO
+Object.keys(passadosPorAno).sort((a, b) => b - a).forEach(ano => {
+  const header = document.createElement('div');
+  header.className = 'timeline-year-header';
+  header.textContent = ano;
+  passadosCardsGrid.appendChild(header);
+  
+  passadosPorAno[ano].forEach(item => {
+    passadosCardsGrid.appendChild(item.elemento);
+  });
+});
 
         // Limpar conteúdo
         card.innerHTML = '';
