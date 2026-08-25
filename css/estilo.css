@@ -103,11 +103,14 @@ background: rgba(13, 13, 13, 0.5);
   opacity: .6;
 }
 
-.nav-links a.active {
-  opacity: 1;
-  background-color: var(--white-10);
-  padding: 8px 12px;
-  border-radius: var(--radius);
+.nav-links a.active::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--fg);
+  border-radius: 50%;
+  margin: 5px auto 0;
 }
 
 .socials {
@@ -1383,6 +1386,12 @@ footer::before {
   );
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.navbar-home {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
   .logo {
