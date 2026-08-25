@@ -149,47 +149,10 @@ Object.keys(passadosPorAno).sort((a, b) => b - a).forEach(ano => {
   header.textContent = ano;
   passadosCardsGrid.appendChild(header);
   
+  passadosPorAno[ano].forEach(item => {
+    passadosCardsGrid.appendChild(item.elemento);
+  });
 });
-
-        // Limpar conteúdo
-        card.innerHTML = '';
-
-
-        // Data
-        if (badge) {
-            card.appendChild(badge);
-        }
-
-
-        // Conteúdo
-        const content = document.createElement('div');
-
-        content.className = 'event-card-content';
-
-
-        if (title) {
-            content.appendChild(title);
-        }
-
-        if (time) {
-            content.appendChild(time);
-        }
-
-        if (location) {
-            content.appendChild(location);
-        }
-
-        if (description) {
-            content.appendChild(description);
-        }
-
-
-        card.appendChild(content);
-
-        passadosCardsGrid.appendChild(card);
-
-    });
-
 
     // =====================================================
     // SE NÃO HOUVER PRÓXIMOS EVENTOS
