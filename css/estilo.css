@@ -282,10 +282,6 @@ background: rgba(13, 13, 13, 0.5);
   opacity: .7;
 }
 
-.hero-text p {
-  /* mantém a separação sem alterar o resultado visual */
-}
-
 /* ===== CONTEÚDO ===== */
 
 .page-content {
@@ -908,9 +904,8 @@ footer::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  max-width: 1000px;
   margin: 0 auto;
-  align-items: center;
+  align-items: start;
 }
 
 .contact-email {
@@ -938,7 +933,13 @@ footer::before {
 
 .contact-email a:hover { border-bottom-color: var(--white-60); }
 
-.press-photos-section,
+.press-photos-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .press-photos-section h2 {
   text-align: center;
 }
