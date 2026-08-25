@@ -142,7 +142,7 @@ passados.forEach(item => {
   passadosPorAno[ano].push(item);
 });
 
-// MOSTRAR COM HEADERS DE ANO
+// MOSTRAR COMO LISTA
 Object.keys(passadosPorAno).sort((a, b) => b - a).forEach(ano => {
   const header = document.createElement('div');
   header.className = 'timeline-year-header';
@@ -150,7 +150,10 @@ Object.keys(passadosPorAno).sort((a, b) => b - a).forEach(ano => {
   passadosCardsGrid.appendChild(header);
   
   passadosPorAno[ano].forEach(item => {
-    passadosCardsGrid.appendChild(item.elemento);
+    const listItem = document.createElement('div');
+    listItem.className = 'event-list-item';
+    listItem.innerHTML = item.elemento.innerHTML;
+    passadosCardsGrid.appendChild(listItem);
   });
 });
 
