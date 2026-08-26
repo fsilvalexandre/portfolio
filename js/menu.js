@@ -61,7 +61,7 @@ window.addEventListener('scroll', () => {
     navbar.style.top = '0';
   } 
   // Scrolling down -> navbar absolute
-  else if (currentScrollY > 100) {
+  else if (currentScrollY > 300) {
     navbar.style.position = 'absolute';
     navbar.style.top = (currentScrollY) + 'px';
   }
@@ -74,4 +74,3 @@ window.addEventListener('scroll', () => {
   
   lastScrollY = currentScrollY;
 });
-
