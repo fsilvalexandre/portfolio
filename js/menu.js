@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==========================================
 // NAVBAR SCROLL
 // ==========================================
-
-let lastScrollY = 0;
-let navbarTimeout;
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   
