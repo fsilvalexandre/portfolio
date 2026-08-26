@@ -486,6 +486,7 @@ background: rgba(13, 13, 13, 0.5);
   font-weight: 300;
   line-height: 1.8;
   opacity: .85;
+text-align: justify;
 }
 
 /* ===== PRÉMIOS ===== */
@@ -1479,13 +1480,15 @@ footer::before {
 
   .members-tabs { gap: 10px; }
 
+  @media (max-width: 768px) {
+     
   .member-btn {
-    padding: 10px 20px;
-    font-size: .8rem;
-    flex: 1;
-    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
-
   .about-container {
     flex-direction: column;
     gap: 30px;
