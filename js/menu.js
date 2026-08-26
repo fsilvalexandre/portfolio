@@ -41,3 +41,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// ==========================================
+// NAVBAR SCROLL
+// ==========================================
+
+let lastScrollY = 0;
+
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  
+  if (navbar.classList.contains('navbar-home')) return;
+  
+  const currentScrollY = window.scrollY;
+  
+  // Scrolling up -> navbar fixed
+  if (currentScrollY < lastScrollY) {
+    navbar.style.position = 'fixed';
+    navbar.style.top = '0';
+  } 
+  // Scrolling down -> navbar absolute
+  else if (currentScrollY > 100) {
+    navbar.style.position = 'absolute';
+    navbar.style.top = (currentScrollY) + 'px';
+  }
+  
+  if (currentScrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  
+  lastScrollY = currentScrollY;
+});
+
