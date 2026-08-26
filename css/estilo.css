@@ -1398,7 +1398,7 @@ footer::before {
 .navbar {
   padding: 10px 15px;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1409,8 +1409,14 @@ footer::before {
     rgba(0,0,0,.18) 55%,
     rgba(0,0,0,0) 100%
   );
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+   .navbar.scrolled {
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
   .logo {
