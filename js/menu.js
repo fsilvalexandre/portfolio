@@ -48,34 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let lastScrollY = 0;
 let navbarTimeout;
-
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   
   if (navbar.classList.contains('navbar-home')) return;
   
-  const currentScrollY = window.scrollY;
-  
-  clearTimeout(navbarTimeout);
-  
-  navbarTimeout = setTimeout(() => {
-    // Scrolling up -> navbar fixed
-    if (currentScrollY < lastScrollY) {
-      navbar.style.position = 'fixed';
-      navbar.style.top = '0';
-    } 
-    // Scrolling down -> navbar absolute
-    else if (currentScrollY > 800) {
-      navbar.style.position = 'absolute';
-      navbar.style.top = (currentScrollY) + 'px';
-    }
-  }, 100);
-  
-  if (currentScrollY > 50) {
+  if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-  
-  lastScrollY = currentScrollY;
 });
