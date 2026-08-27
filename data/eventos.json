@@ -20,6 +20,7 @@
         },
         "date": "2026-09-04"
     },
+
     {
         "day": "13",
         "month": {
@@ -36,11 +37,12 @@
             "en": "Auditori i Palau de Congressos de Castelló"
         },
         "description": {
-            "pt": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]",
-            "en": "Maurizio Azzan – Remainscape (2025) [~15 min], João Pedro Oliveira – Kairos (2025) [~10 min], Francesco Filidei – I funerali dell’anarchico Serantini (2006) [~12 min], Maria Vittoria Agresti – BK (2024) [~15 min]"
+            "pt": "Maurizio Azzan – Remainscape, João Pedro Oliveira – Kairos, Francesco Filidei – I funerali dell’anarchico Serantini, Maria Vittoria Agresti – BK",
+            "en": "Maurizio Azzan – Remainscape, João Pedro Oliveira – Kairos, Francesco Filidei – I funerali dell’anarchico Serantini, Maria Vittoria Agresti – BK"
         },
         "date": "2026-02-13"
     },
+
     {
         "day": "08",
         "month": {
@@ -61,5 +63,137 @@
             "en": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira and Maurizio Azzan"
         },
         "date": "2025-12-08"
+    },
+
+        {
+        "day": "29",
+        "month": {
+            "pt": "Out",
+            "en": "Oct"
+        },
+        "title": {
+            "pt": "O'culto da Ajuda",
+            "en": "Metatempo - DME Festival"
+        },
+        "time": "21:00",
+        "location": {
+            "pt": "Metatempo - DME Festival",
+            "en": "Metatempo - DME Festival"
+        },
+        "description": {
+            "pt": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan",
+            "en": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira and Maurizio Azzan"
+        },
+        "date": "2025-10-29"
+    },
+
+            {
+        "day": "24",
+        "month": {
+            "pt": "Out",
+            "en": "Oct"
+        },
+        "title": {
+            "pt": "Lançamento do CD | ID I",
+            "en": "CD Launch | ID I"
+        },
+        "time": "17:00",
+        "location": {
+            "pt": "Universidade de Aveiro,",
+            "en": "Aveiro University"
+        },
+        "description": {
+            "pt": "Carlos Guedes, Maria Vittoria Agresti and Olívia Silva",
+            "en": "Carlos Guedes, Maria Vittoria Agresti and Olívia Silva"
+        },
+        "date": "2025-10-24"
+    },
+
+        {
+        "day": "10",
+        "month": {
+            "pt": "Jul",
+            "en": "Jul"
+        },
+        "title": {
+            "pt": "Metatempo - Festival PercuART",
+            "en": "Metatempo - Festival PercuART"
+        },
+        "time": "21:30",
+        "location": {
+            "pt": "Castelo Branco",
+            "en": "Castelo Branco"
+        },
+        "description": {
+            "pt": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan",
+            "en": "Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira and Maurizio Azzan"
+        },
+        "date": "2025-07-10"
+    },
+
+            {
+        "day": "23",
+        "month": {
+            "pt": "Mai",
+            "en": "May"
+        },  
+        "title": {
+            "pt": "Metatempo - Salão Brazil",
+            "en": "Metatempo - Salão Brazil"
+        },
+        "time": "21:00",
+        "location": {
+            "pt": "Salão Brazil, Coimbra",
+            "en": "Salão Brazil, Coimbra"
+        },
+        "description": {
+            "pt": "Estreia das obras de: Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira e Maurizio Azzan",
+            "en": "Premiere of works by: Hugo Vasco Reis, Luís Antunes Pena, João Pedro Oliveira and Maurizio Azzan"
+        },
+        "date": "2025-05-23"
+    },
+
+        {
+        "day": "13",
+        "month": {
+            "pt": "Jul",
+            "en": "Jul"
+        },
+        "title": {
+            "pt": "Intermitências | Cistermúsica",
+            "en": "Intermitências | Cistermúsica"
+        },
+        "time": "23:30",
+        "location": {
+            "pt": "Armazém das Artes, Alcobaça",
+            "en": "Armazém das Artes, Alcobaça"
+        },
+        "description": {
+            "pt": "Obras de: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
+            "en": "Works by: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial"
+        },
+        "date": "2024-07-13"    
+    },
+
+            {
+        "day": "12",
+        "month": {
+            "pt": "Jul",
+            "en": "Jul"
+        },
+        "title": {
+            "pt": "Intermitências | Verão a 2 Tempos",
+            "en": "Intermitências | Verão a 2 Tempos"
+        },
+        "time": "23:30",
+        "location": {
+            "pt": "Teatro da Cerca de S. Bernardo, Coimbra",
+            "en": "ATeatro da Cerca de S. Bernardo, Coimbra"
+        },
+        "description": {
+            "pt": "Obras de: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial",
+            "en": "Works by: Juliana Hodkinson, Lightness, David Bird, Decoder, Cathy Van Eck - Wings, Simon Løffler - e & Carlos Guedes, Psychedelic Industrial"
+        },
+        "date": "2024-07-12"    
     }
 ]
