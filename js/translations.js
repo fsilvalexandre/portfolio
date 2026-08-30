@@ -6,6 +6,22 @@ let currentLanguage = localStorage.getItem('language') || 'pt';
 
 let translations = {};
 
+// Tenta usar traduções já guardadas em cache,
+// para aplicar de imediato sem esperar pelo fetch
+try {
+
+    const cached = localStorage.getItem('translationsCache');
+
+    if (cached) {
+        translations = JSON.parse(cached);
+    }
+
+} catch (error) {
+
+    console.error('Erro ao ler cache de traduções:', error);
+
+}
+
 
 // =========================================================
 // CARREGAR TRADUÇÕES
@@ -13,11 +29,21 @@ let translations = {};
 
 async function loadTranslations() {
 
+    // Se já há traduções em cache, aplica-as já mesmo
+    // antes de o fetch terminar — evita o "flash"
+    if (Object.keys(translations).length > 0) {
+
+        document.documentElement.lang = currentLanguage;
+
+        applyTranslations();
+
+        updateLanguageSelector();
+
+    }
+
     try {
 
-        const response = await fetch(
-            `./data/translations.json?t=${Date.now()}`
-        );
+        const response = await fetch('./data/translations.json');
 
         if (!response.ok) {
             throw new Error(`Erro HTTP ${response.status}`);
@@ -25,9 +51,13 @@ async function loadTranslations() {
 
         translations = await response.json();
 
+        localStorage.setItem(
+            'translationsCache',
+            JSON.stringify(translations)
+        );
+
         console.log('Traduções carregadas:', translations);
 
-        // Atualizar idioma do HTML
         document.documentElement.lang = currentLanguage;
 
         applyTranslations();
@@ -36,10 +66,7 @@ async function loadTranslations() {
 
     } catch (error) {
 
-        console.error(
-            'Erro ao carregar traduções:',
-            error
-        );
+        console.error('Erro ao carregar traduções:', error);
 
     }
 
@@ -230,9 +257,11 @@ function t(key) {
 
 document.addEventListener(
     'DOMContentLoaded',
-    function () {
+    async function () {
 
-        loadTranslations();
+        await loadTranslations();
+
+        document.body.classList.add('i18n-ready');
 
     }
 );
