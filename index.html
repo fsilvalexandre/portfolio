@@ -92,9 +92,14 @@
 
   <main>
     <section class="hero">
-      <picture>
+<picture>
   <source media="(max-width: 768px)" srcset="imagens/foto-principal-mobile.jpg">
-  <img src="imagens/foto-principal.jpg" alt="RePercussion Trio" class="hero-img">
+  <img
+    src="imagens/foto-principal.jpg"
+    alt="RePercussion Trio"
+    class="hero-img"
+    onload="this.classList.add('loaded')"
+  >
 </picture>
       <div class="hero-text">
         <h1 data-translate="home.title">RePercussion Trio</h1>
