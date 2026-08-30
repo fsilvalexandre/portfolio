@@ -28,14 +28,14 @@
 
 <!-- Language Selector - Desktop -->
 <div class="language-selector">
-  <button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
-  <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+<button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+<button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
 </div>
 
 <button class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
+<span></span>
+<span></span>
+<span></span>
 </button>
 
 <div class="socials">
@@ -53,36 +53,36 @@
 
 <!-- Menu Mobile Overlay -->
 <div class="mobile-menu" id="mobile-menu">
-  <div class="mobile-menu-content">
-    <!-- Language Selector - Mobile -->
-    <div class="mobile-language-selector">
-      <button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
-      <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
-    </div>
+<div class="mobile-menu-content">
+<!-- Language Selector - Mobile -->
+<div class="mobile-language-selector">
+<button class="language-btn active" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+<button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+</div>
 
-    <!-- Links de navegação -->
-    <ul class="mobile-nav-links">
-      <li><a href="index.html" data-translate="navbar.home">Página Inicial</a></li>
-      <li><a href="sobre.html" data-translate="navbar.about">Sobre Nós</a></li>
-      <li><a href="repertorio.html" data-translate="navbar.repertoire">Repertório</a></li>
-      <li><a href="galeria.html" data-translate="navbar.gallery">Galeria</a></li>
-      <li><a href="agenda.html" data-translate="navbar.agenda">Agenda</a></li>
-      <li><a href="contactos.html" data-translate="navbar.contact">Contactos</a></li>
-    </ul>
+<!-- Links de navegação -->
+<ul class="mobile-nav-links">
+<li><a href="index.html" data-translate="navbar.home">Página Inicial</a></li>
+<li><a href="sobre.html" data-translate="navbar.about">Sobre Nós</a></li>
+<li><a href="repertorio.html" data-translate="navbar.repertoire">Repertório</a></li>
+<li><a href="galeria.html" data-translate="navbar.gallery">Galeria</a></li>
+<li><a href="agenda.html" data-translate="navbar.agenda">Agenda</a></li>
+<li><a href="contactos.html" data-translate="navbar.contact">Contactos</a></li>
+</ul>
 
-    <!-- Socials no rodapé -->
-    <div class="mobile-socials">
-      <a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
-  </div>
+<!-- Socials no rodapé -->
+<div class="mobile-socials">
+<a href="https://facebook.com/repercussiontrio" target="_blank" aria-label="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://instagram.com/repercussiontrio" target="_blank" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://youtube.com/@repercussiontrio" target="_blank" aria-label="YouTube">
+<i class="fab fa-youtube"></i>
+</a>
+</div>
+</div>
 </div>
 </header>
 
@@ -90,10 +90,54 @@
 <div class="page-content">
 <h1 class="page-title" data-translate="gallery.pageTitle">Galeria</h1>
 
-<!-- Masonry Gallery -->
-<div class="gallery-masonry" id="gallery-masonry">
-<!-- Items loaded by galeria.js -->
+<!-- VÍDEOS: Preview grande + carrossel -->
+<section class="gallery-section" id="gallery-section-videos">
+<h2 class="section-title" data-translate="gallery.tabVideos">Vídeos</h2>
+
+<div class="video-viewer">
+<div class="video-viewer-player">
+<iframe
+id="video-viewer-iframe"
+width="100%"
+height="100%"
+src=""
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
 </div>
+
+<div class="video-viewer-info">
+<h3 class="video-viewer-title" id="video-viewer-title"></h3>
+<p class="video-viewer-meta" id="video-viewer-meta"></p>
+</div>
+</div>
+
+<div class="video-carousel-wrapper">
+<button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Anterior">
+<i class="fas fa-chevron-left"></i>
+</button>
+
+<div class="video-carousel" id="video-carousel">
+<!-- Miniaturas carregadas por galeria.js -->
+</div>
+
+<button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Seguinte">
+<i class="fas fa-chevron-right"></i>
+</button>
+</div>
+
+</section>
+
+<!-- FOTOS: Masonry -->
+<section class="gallery-section" id="gallery-section-fotos">
+<h2 class="section-title" data-translate="gallery.tabPhotos">Fotos</h2>
+<div class="gallery-masonry" id="gallery-masonry">
+<!-- Fotos carregadas por galeria.js -->
+</div>
+</section>
+
 </div>
 </main>
 
@@ -102,16 +146,8 @@
 <span class="lightbox-close">&times;</span>
 <img class="lightbox-image" id="lightbox-image" src="" alt="">
 <div class="lightbox-nav">
-  <button class="lightbox-prev" id="lightbox-prev">‹</button>
-  <button class="lightbox-next" id="lightbox-next">›</button>
-</div>
-</div>
-
-<!-- YouTube Modal para Vídeos -->
-<div class="youtube-modal" id="youtube-modal">
-<span class="youtube-close">&times;</span>
-<div class="youtube-container">
-  <iframe id="youtube-iframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<button class="lightbox-prev" id="lightbox-prev">‹</button>
+<button class="lightbox-next" id="lightbox-next">›</button>
 </div>
 </div>
 
@@ -119,6 +155,5 @@
 <script src="js/galeria.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/navbar-scroll.js"></script>
-
 </body>
 </html>
