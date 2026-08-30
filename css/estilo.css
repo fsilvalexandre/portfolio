@@ -285,7 +285,7 @@ background: rgba(13, 13, 13, 0.5);
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(.6);
+  filter: brightness(1);
   clip-path: inset(0 0 100% 0);
   transition: clip-path 1.1s cubic-bezier(.65,0,.35,1);
 }
